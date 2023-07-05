@@ -1,0 +1,19 @@
+input[disabled] {
+  background-color: red;
+}
+
+input[placeholder="이름"] {
+  background-color: orange;
+}
+
+/* input[value="pw"] {
+  background-color: blue;
+}
+
+input[value="000-0000-0000"] {
+  background-color: blue;
+} */
+
+input:not([placeholder]) {
+  background-color: blue;
+}

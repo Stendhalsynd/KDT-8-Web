@@ -1,0 +1,12 @@
+.stripes div:nth-child(2n + 1) {
+  background-color: navy;
+  color: white;
+}
+
+.stripes div:nth-child(2n) {
+  background-color: yellow;
+}
+
+.stripes div::before {
+  content: "before";
+}

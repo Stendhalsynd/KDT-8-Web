@@ -1,0 +1,118 @@
+/* div {
+  width: 100px;
+  height: 100px;
+  border: 10px solid purple;
+  background-color: lightcyan;
+} */
+
+/* 전체선택자 */
+/* * {
+  color: red;
+} */
+
+/* 태그 선택자 */
+/* li {
+  color: lime;
+} */
+
+/* span 태그는 display 가 inline 으로 컨텐츠 크기만큼 차지한다. */
+/* span {
+  background-color: red;
+}
+#purple {
+  color: purple;
+}
+
+.orange {
+  color: orange;
+} */
+
+/* 일치 선택자 */
+span.lime {
+  color: lime;
+}
+
+/* 자식 선택자 */
+ul > .orange {
+  background-color: gray;
+}
+
+/* 자손 선택자 */
+ul .orange {
+  font-weight: 900;
+}
+
+/* 인접 형제 선택자 */
+.orange + li {
+  background-color: aqua;
+  line-height: 40px;
+  font-size: 30px;
+}
+
+/* 인접 형제 선택자 */
+#orange + span {
+  background-color: red;
+}
+
+/* 일반 형제 선택자 */
+.orange ~ li {
+  background-color: purple;
+  line-height: 40px;
+  font-size: 30px;
+}
+
+a:hover {
+  color: pink;
+}
+
+a:active {
+  color: white;
+  background-color: black;
+}
+
+input:focus {
+  color: red;
+  background-color: lightgray;
+}
+
+/* first-child */
+.fruits span:first-child {
+  color: red;
+}
+
+.fruits div:first-child {
+  color: blue;
+}
+
+.fruits h3:last-child {
+  text-decoration: line-through; /* 취소선 */
+  text-decoration: underline; /* 밑줄 */
+}
+
+.fruits p:last-child {
+  color: lime;
+}
+
+.fruits span:nth-child(2n + 1) {
+  color: red;
+}
+
+.fruits *:not(span) {
+  background-color: aquamarine;
+}
+
+.fruits::before {
+  content: "과일시작";
+}
+
+input[disabled] {
+  background-color: lightcoral;
+}
+
+input[readonly] {
+  background-color: orange;
+}
+
+input[type="password"] {
+  background-color: red;
+}
