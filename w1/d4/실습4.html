@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head style="margin: 0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: beige;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .content {
+        background-color: white;
+        border: 10px solid lightgray;
+        border-radius: 15px;
+        padding: 15px;
+      }
+      h3 {
+        margin: 18.72px 5px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
+      integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css"
+      integrity="sha512-yDUXOUWwbHH4ggxueDnC5vJv4tmfySpVdIcN1LksGZi8W8EVZv4uKGrQc0pVf66zS7LDhFJM7Zdeow1sw1/8Jw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body style="margin: 0">
+    <div class="container">
+      <div class="content">
+        <h3>설문조사</h3>
+        <span>이름</span>
+        <input type="text" />
+        <br />
+        <span>이메일</span>
+        <input type="password" placeholder="love@example.com" />
+        <h3>나이</h3>
+        <input
+          type="radio"
+          checked
+          style="accent-color: rgb(235, 115, 68)"
+        />10대 <input type="radio" />20대 <input type="radio" />30대
+        <input type="radio" />40대 <input type="radio" />50대
+        <input type="radio" />60대 이상
+        <h3>원하는 강의(복수응답가능합니다.)</h3>
+        <input type="checkbox" checked />HTML
+        <input type="checkbox" />Javascript <input type="checkbox" />CSS
+        <br />
+        <textarea
+          cols="70"
+          rows="10"
+          placeholder="하고 싶은 말을 써주세요 :)"
+        ></textarea>
+        <button>제출</button>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+  </body>
+</html>
