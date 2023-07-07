@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 500px;
+        height: 500px;
+        background-color: beige;
+        position: relative;
+      }
+      button {
+        width: 500px;
+        height: 500px;
+        position: absolute;
+      }
+      /* 자기 자신을 기준으로 왼쪽 50px, 위쪽 30px */
+      .item1 {
+        position: relative;
+        left: 50px;
+        top: 45px;
+        background-color: red;
+        width: 80px;
+        height: 80px;
+        visibility: hidden;
+        z-index: 1;
+      }
+      .item0 {
+        position: relative;
+        left: 50px;
+        top: 30px;
+        background-color: blue;
+        width: 80px;
+        height: 80px;
+        /* visibility: hidden; */
+      }
+      /* 컨테이너를 기준으로 오른쪽 30px, 아래쪽 100px */
+      .item2 {
+        position: absolute;
+        right: 30px;
+        bottom: 100px;
+        background-color: blue;
+        width: 80px;
+        height: 80px;
+        opacity: 0.5;
+      }
+      /* 뷰포트를 기준으로 오른쪽 100px, 위 100px */
+      .item3 {
+        position: fixed;
+        right: 100px;
+        top: 100px;
+        background-color: orange;
+        width: 80px;
+        height: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button>
+        <a
+          style="display: inline-block; width: 500px; height: 500px"
+          href="https://www.naver.com"
+          target="_blank"
+          >네이버</a
+        >
+      </button>
+      <div class="item1"></div>
+      <div class="item0"></div>
+      <div class="item2"></div>
+      <div class="item3"></div>
+    </div>
+  </body>
+</html>

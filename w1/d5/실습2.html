@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 500px;
+        height: 500px;
+        background-color: beige;
+        position: relative;
+      }
+      /* 자기 자신을 기준으로 왼쪽 50px, 위쪽 30px */
+      .item1 {
+        position: absolute;
+        /* left: 50px;
+        top: 45px; */
+        background-color: red;
+        width: 100px;
+        height: 100px;
+      }
+      /* 컨테이너를 기준으로 오른쪽 30px, 아래쪽 100px */
+      .item2 {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+      }
+      /* 뷰포트를 기준으로 오른쪽 100px, 위 100px */
+      .item3 {
+        position: absolute;
+        top: 60px;
+        left: 60px;
+        background-color: orange;
+        width: 100px;
+        height: 100px;
+      }
+
+      /* 자기 자신을 기준으로 왼쪽 50px, 위쪽 30px */
+      .item4 {
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        background-color: red;
+        width: 100px;
+        height: 100px;
+        z-index: 3;
+      }
+      /* 컨테이너를 기준으로 오른쪽 30px, 아래쪽 100px */
+      .item5 {
+        position: absolute;
+        top: 230px;
+        left: 230px;
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+        z-index: 2;
+      }
+      /* 뷰포트를 기준으로 오른쪽 100px, 위 100px */
+      .item6 {
+        position: absolute;
+        top: 260px;
+        left: 260px;
+        background-color: orange;
+        width: 100px;
+        height: 100px;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item1"></div>
+      <div class="item2"></div>
+      <div class="item3"></div>
+
+      <div class="item4"></div>
+      <div class="item5"></div>
+      <div class="item6"></div>
+    </div>
+  </body>
+</html>
