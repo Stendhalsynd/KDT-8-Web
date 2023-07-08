@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 100vw;
+        height: 100vh;
+        /* animation-name: dayAnime;
+        animation-duration: 10s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease;
+        animation-delay: 0s; */
+        animation: dayAnime 10s 1 linear 0s;
+      }
+      @keyframes dayAnime {
+        0% {
+          background-color: aquamarine;
+        }
+        50% {
+          background-color: pink;
+        }
+        100% {
+          background-color: purple;
+        }
+      }
+      img {
+        position: absolute;
+      }
+      .city {
+        width: 80vw;
+        margin-left: 10vw;
+        margin-top: 20vh;
+      }
+      .smallcloud {
+        width: 6vw;
+        opacity: 0.5;
+        z-index: 1;
+        left: 20vw;
+        top: 18vh;
+        animation: smallcloud 10s 1 linear 0s;
+      }
+      @keyframes smallcloud {
+        0% {
+          left: 20vw;
+          opacity: 0;
+        }
+        25% {
+          left: 90vw;
+          opacity: 1;
+        }
+        50% {
+          left: 20vw;
+          opacity: 0;
+        }
+        75% {
+          left: 90vw;
+          opacity: 1;
+        }
+        100% {
+          left: 20vw;
+          opacity: 0;
+        }
+      }
+      .bigcloud {
+        width: 9vw;
+        opacity: 0.8;
+        left: 20vw;
+        top: 12vh;
+        animation: bigcloud 10s 1 linear 0s;
+      }
+      @keyframes bigcloud {
+        0% {
+          left: 20vw;
+          opacity: 0;
+        }
+        25% {
+          left: 45vw;
+          opacity: 1;
+        }
+        50% {
+          left: 90vw;
+          opacity: 0;
+        }
+        75% {
+          left: 45vw;
+          opacity: 1;
+        }
+        100% {
+          left: 20vw;
+          opacity: 0;
+        }
+      }
+      .moon {
+        width: 10vw;
+        opacity: 0;
+        left: 10vw;
+        top: 10vh;
+        animation: moon 10s 1 linear 0s;
+      }
+      @keyframes moon {
+        0% {
+          opacity: 0;
+          transform: rotate(0deg);
+        }
+        50% {
+          opacity: 0;
+          transform: rotate(-100deg);
+        }
+        100% {
+          opacity: 1;
+          transform: rotate(-200deg);
+        }
+      }
+      .sun {
+        width: 10vw;
+        opacity: 1;
+        left: 10vw;
+        top: 10vh;
+        animation: sun 10s 1 linear 0s;
+      }
+      @keyframes sun {
+        0% {
+          opacity: 1;
+          transform: rotate(0deg);
+        }
+        50% {
+          opacity: 0;
+          transform: rotate(100deg);
+        }
+        100% {
+          opacity: 0;
+          transform: rotate(200deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="../../images/city.png" alt="" class="city" />
+      <img src="../../images/cloud.png" alt="" class="smallcloud" />
+      <img src="../../images/cloud.png" alt="" class="bigcloud" />
+      <img src="../../images/moon.png" alt="" class="moon" />
+      <img src="../../images/sun.png" alt="" class="sun" />
+    </div>
+  </body>
+</html>

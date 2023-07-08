@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      .transform1 {
+        background-color: lightgray;
+        position: relative;
+        left: 100px;
+        top: 100px;
+      }
+      .transform1:hover {
+        transform: translate(100px);
+      }
+      .transform2 {
+        background-color: skyblue;
+        position: relative;
+        left: 150px;
+        top: 50px;
+      }
+      .transform2:hover {
+        /* transform: translate(40px, 40px); */
+        /* transform: translateX(40px); */
+        /* transform: scale(2); 중앙점 기준 확대, 벽에 붙으면 옆으로 밀린다. */
+        /* transform: rotateX(90deg); */
+        /* transform: skewX(30deg); */
+        transform: rotatey(180deg);
+        backface-visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!-- <div class="transform1"></div>
+      <div class="transform2" style="color: white">ABCDE</div> -->
+      <img
+        class="transform2"
+        src="../../images/dog.webp"
+        alt="개"
+        width="300px"
+      />
+    </div>
+  </body>
+</html>
