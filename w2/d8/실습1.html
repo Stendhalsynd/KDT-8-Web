@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let colors = [
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "purple",
+        "black",
+      ];
+      // console.log(
+      //   `1~4번 출력 : ${colors[0]} ${colors[1]} ${colors[2]} ${colors[3]}`
+      // );
+      // console.log(`1. index 가 2 : ${colors[2]}`);
+      // colors.push("brown");
+      // console.log(`2. 좋아하는 색 마지막 출력후 배열 출력 : ${colors}`);
+      // console.log(
+      //   `3. black 이 몇 번째 인덱스에 있는지 : ${colors.indexOf("black")}`
+      // );
+      // console.log(`4. 리스트의 순서 반전시킨뒤 출력 : ${colors.reverse()}`);
+      // let num = 1;
+      // let str = "str";
+      // let obj = {
+      //   age: 1,
+      // };
+      // console.log(`${typeof num} isn't ${typeof str} data type.`);
+      // console.log(
+      //   `Typeof 를 boolean 이나 null에 사용하면, ${typeof obj} 결과를 얻을 수 있습니다.`
+      // );
+      // let mathScore = Number(prompt("수학 점수를 입력하세요"));
+      // let engScore = Number(prompt("영어 점수를 입력하세요"));
+
+      // console.log("mathScore :", mathScore);
+      // console.log("engScore :", engScore);
+      // let avg = (mathScore + engScore) / 2;
+
+      // console.log(avg);
+
+      // console.log(`${parseFloat("3")}`);
+
+      // let d = new Date();
+      // console.log(Number(d));
+
+      // console.log(d.getTime());
+
+      // // 함수 선언문
+      // functionName();
+      // function functionName() {
+      //   console.log("hi");
+      // }
+
+      // // 함수 표현식
+      // sayHello();
+      // let sayHello = function () {
+      //   console.log("Hello");
+      // };
+
+      // // 함수 선언문
+      // function sayHello1(name) {
+      //   console.log(`Hello, ${name}`);
+      // }
+
+      // // 함수 표현식
+      // let sayHello2 = function (name) {
+      //   console.log(`Hello, ${name}`);
+      // };
+
+      // // 화살표 함수
+      // let sayHello3 = (name) => {
+      //   console.log(`Hello, ${name}`);
+      // };
+
+      // sayHello1("1번");
+      // sayHello2("2번");
+      // sayHello3("3번");
+
+      // let multifly = (num1, num2) => {
+      //   let result = num1 * num2;
+      //   return result;
+      // };
+
+      // console.log(multifly(3, 7));
+      // console.log(multifly(2, 2));
+
+      // console.log(multifly);
+
+      // const obj = {
+      //   name: "hoony",
+      //   func1: function () {
+      //     console.log("func1 : ", this);
+      //   },
+      //   func2: () => {
+      //     console.log("func2 : ", this);
+      //   },
+      //   func3: function () {
+      //     getName = () => {
+      //       console.log("func3 : ", this);
+      //     };
+      //     getName();
+      //   },
+      //   func4: function () {
+      //     const obj2 = {
+      //       subFunc1: () => console.log("func4 : ", this),
+      //     };
+      //     subFunc = function () {
+      //       console.log("func4 - subFunc : ", this);
+      //     };
+      //     obj2.subFunc1();
+      //     subFunc();
+      //   },
+      // };
+      // obj.func1(); // obj 객체
+      // obj.func2(); // window 객체
+      // obj.func3(); // obj 객체
+      // obj.func4(); // 결과는?
+
+      // let square = (num) => {
+      //   console.log(num * num);
+      // };
+
+      // square(4);
+      // square(11);
+      // square(5);
+
+      // let click2 = () => {
+      //   alert("클릭했습니다.");
+      // };
+      // function test2(obj) {
+      //   console.log(obj);
+      //   console.log(obj.value);
+      // }
+      // let a = Number(prompt("첫 번째 숫자를 입력해주세요."));
+      // let b = Number(prompt("두 번째 숫자를 입력해주세요."));
+      // let add = () => {
+      //   alert(a + b);
+      // };
+      // let sub = () => {
+      //   alert(a - b);
+      // };
+      // let divide = () => {
+      //   alert(a / b);
+      // };
+      // let mul = () => {
+      //   alert(a * b);
+      // };
+      // let age = Number(prompt("나이를 입력해주세요."));
+      // let sex = prompt("성별을 입력해주세요.");
+
+      // let role;
+      // let part;
+      // if (age >= 20) {
+      //   role = "성인";
+      // } else if (age >= 17) {
+      //   role = "고등";
+      // } else if (age >= 14) {
+      //   role = "중등";
+      // } else if (age >= 8) {
+      //   role = "초등";
+      // } else if (age >= 0) {
+      //   role = "유아";
+      // }
+
+      // if (age < 20) {
+      //   if (sex == "남자") {
+      //     sex = "남학생";
+      //   } else {
+      //     sex = "여학생";
+      //   }
+      // }
+
+      // console.log(role, sex);
+      // let now = new Date().getHours();
+
+      // now < 13 ? console.log("오전입니다.") : console.log("오후입니다.");
+
+      // switch (now) {
+      //   case 0:
+      //   case 1:
+      //   case 2:
+      //   case 3:
+      //   case 4:
+      //   case 5:
+      //   case 6:
+      //   case 7:
+      //   case 8:
+      //   case 9:
+      //   case 10:
+      //   case 11:
+      //     console.log("오전입니다.");
+      //     break;
+      //   case 12:
+      //   case 13:
+      //   case 14:
+      //   case 15:
+      //   case 16:
+      //   case 17:
+      //   case 18:
+      //   case 19:
+      //   case 20:
+      //   case 21:
+      //   case 22:
+      //   case 23:
+      //     console.log("오후입니다.");
+      //     break;
+      // }
+
+      // let inputNum = Number(prompt("max 값을 입력해주세요."));
+      // for (let num = 1; num <= inputNum; num++) {
+      //   if (num % 13 == 0 && num % 2 == 1) {
+      //     console.log(num);
+      //   }
+      // }
+
+      // for (let i = 2; i <= 9; i++) {
+      //   console.log(`--- ${i} 단 ---`);
+      //   for (let j = 1; j <= 9; j++) {
+      //     console.log(`${i}x ${i} x ${j} = ${i * j}`);
+      //   }
+      // }
+
+      let n = 1;
+      let sum = 0;
+      while (n < 100) {
+        if (n % 2 == 0 || n % 3 == 0) {
+          sum += n;
+        }
+      }
+      console.log("합계 : ", sum);
+    </script>
+  </head>
+  <body>
+    <!-- <button onclick="click2();">버튼</button>
+    <div style="background-color: yellow" onclick="click2();">안녕</div> -->
+    <!-- <input type="text" onfocus="click2();" /> -->
+    <!-- <input type="text" onchange="test2(this);" /> -->
+    <!-- <input type="text" onkeyup="test2(this);" /> -->
+    <!-- <button onclick="add()">더하기</button>
+    <button onclick="sub()">빼기</button>
+    <button onclick="divide()">나누기</button>
+    <button onclick="mul()">곱하기</button> -->
+  </body>
+</html>
