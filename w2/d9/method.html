@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // // 문자열 관련 메서드
+      // let str = "     Happy day~!    ";
+
+      // // 1. 문자열 길이
+      // console.log("length: ", str.length);
+
+      // // 2. 대소문자
+      // console.log("toUpperCase :", str.toUpperCase());
+      // console.log("toLowerCase :", str.toLowerCase());
+
+      // // 3. indexOf, 첫번째 등장하는 대상의 index, 마지막 등장하는 인덱스
+      // console.log("index :", str.indexOf("y"));
+
+      // console.log("lastIndex :", str.lastIndexOf("y"));
+
+      // // 4. 문자열 자르기, 첫번째 필수, 두번째 옵션
+      // console.log("slice :", str.slice(0, 4));
+
+      // console.log("str : ", str);
+
+      // console.log("slice :", str.slice(4));
+
+      // // 5. 바꾸기, replace 여러개 있어도 먼저 등장한 것만 바꾼다. replaceAll 모두 바꿈
+      // console.log("replace p -> a : ", str.replace("p", "a"));
+
+      // console.log("replaceAll a -> k :", str.replaceAll("a", "k"));
+
+      // // 6. 반복 (repeat)
+      // console.log("repeat : ", str.repeat(10));
+
+      // // 7. split ( 문자열을 내가 원하는 부분에서 자르고 리스트로 만들어준다.)
+      // // split 대상도 포함해서 자르니 두번째 예시에선 a 가 제거된다.
+      // console.log('split " " : ', str.split(" "));
+      // console.log('split "a" : ', str.split("a"));
+      // console.log('split "": ', str.split(""));
+
+      // // 8. trim() : 공백 제거
+      // console.log("trim 전 : ", str);
+      // console.log("trim 후 : ", str.trim());
+
+      // // 배열 관련 메소드
+      // let days = [
+      //   "월요일",
+      //   "화요일",
+      //   "수요일",
+      //   "목요일",
+      //   "금요일",
+      //   "토요일",
+      //   "일요일",
+      // ];
+
+      // // 0. 길이
+      // console.log("length : ", days.length);
+
+      // // 1. 마지막 요소 추가/삭제
+      // // push() : 마지막 요소 추가, 추가된 이후의 리스트 길이를 반환
+      // let pushResult = days.push(...days);
+      // console.log(days);
+      // console.log("pushResult : ", pushResult);
+
+      // // pop() : 마지막 요소 삭제
+      // days.pop(); // string | undefined; > 문자열 혹은 undefined  반환
+      // console.log("pop : ", days);
+
+      // 2. 맨 앞 요소 추가/삭제
+
+      // 3. 인덱스 가져오기
+
+      // let sum1 = 0,
+      //   sum2 = 0,
+      //   sum3 = 0;
+      // let array = [];
+      // for (let i = 1; i <= 100; i++) {
+      //   sum1 += i;
+      //   array.push(i);
+      // }
+
+      // for (let element of array) {
+      //   sum2 += element;
+      // }
+
+      // array.forEach((element) => (sum3 += element));
+
+      // console.log("for 문 : ", sum1);
+      // console.log("for of 문 : ", sum2);
+      // console.log("for each 문 :", sum3);
+
+      // let fruits1 = [
+      //   "사과",
+      //   "딸기",
+      //   "파인애플",
+      //   "수박",
+      //   "참외",
+      //   "오렌지",
+      //   "자두",
+      //   "망고",
+      // ];
+      // let fruits2 = ["수박", "사과", "참외", "오렌지", "파인애플", "망고"];
+
+      // let same = [];
+      // let diff = [];
+
+      // for (let element1 of fruits1) {
+      //   for (let element2 of fruits2) {
+      //     if (element1 == element2 && !same.includes(element1)) {
+      //       same.push(element1);
+      //       continue;
+      //     }
+      //   }
+      // }
+
+      // for (let element1 of fruits1) {
+      //   if (!same.includes(element1) && !diff.includes(element1)) {
+      //     diff.push(element1);
+      //   }
+      // }
+
+      // for (let element2 of fruits2) {
+      //   if (!same.includes(element2) && !diff.includes(element2)) {
+      //     diff.push(element2);
+      //   }
+      // }
+
+      // console.log("동일한 요소 : ", same);
+      // console.log("서로 다른 요소 : ", diff);
+    </script>
+  </head>
+  <body></body>
+</html>
