@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 500px;
+        height: 500px;
+        background-color: beige;
+      }
+      .box {
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+      }
+      #green {
+        background-color: greenyellow;
+      }
+      #red {
+        background-color: rosybrown;
+      }
+      .abc {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="green">1</div>
+      <div class="box" id="red">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+    </div>
+    <div>test</div>
+    <input type="text" name="username" id="username" />
+
+    <script>
+      // 요소 선택
+      // 1. getElementById
+      // id 속성만으로 요소를 선택해서 가져온다.
+      // 요소를 하나만 선택하는 친구
+      let dom1 = document.getElementById("green");
+      console.log("dom1 : ", dom1);
+
+      // 2. getElementByClassName
+      // class 속성만으로 요소를 선택해서 가져온다.
+      // HTMLCollection 이라는 형태의 배열
+      // 1개여도 배열이다.
+      let dom2 = document.getElementsByClassName("box"); // s 가 붙으면 리스트라고 보면 된다.
+      console.log("dom2 : ", dom2);
+      for (let i = 0; i < dom2.length; i++) {
+        console.log(dom2[i]);
+      }
+
+      // 3. getElementsByTagName
+      // 태그 이름을 기준으로 요소를 선택해서 가져온다.
+      // HTMLCollection 이라는 형태의 배열
+      let dom3 = document.getElementsByTagName("div");
+      console.log("dom3 : ", dom3);
+
+      // 4. getElementsByName
+      // name 속성값으로 요소를 선택해서 가져온다.
+      // HTMLCollection 배열 -> ?? NodeList 가 반환되는데
+      let dom4 = document.getElementsByName("username");
+      console.log("dom4 : ", dom4);
+
+      // 5. querySelector
+      // 요소중 가장 위에있는 것을 가져온다.
+      // 특정 속성이 아니라 내가 원하는 걸 선택자를 이용해서 가져온다.
+      // css 선택자와 동일
+      // # : id
+      // . : class
+      // [name=''] : name 속성
+      // input[type='']
+      // div : div 태그
+      let dom5 = document.querySelector("#red");
+      console.log("dom5 : ", dom5);
+
+      let dom6 = document.querySelector("div");
+      console.log("dom6 : ", dom6);
+
+      // 6. querySelectorAll
+      // querySelector와 동일하나 다른 점은 n개를 가져온다.
+      // 선택자와 일치하는 모든 것을 배열로 가져온다.
+      // NodeList 가 반환된다.
+      let dom7 = document.querySelectorAll("div");
+      console.log("dom7 : ", dom7);
+    </script>
+
+    <div id="abc">
+      Text
+      <div id="div_id1">div test</div>
+      <div>div test</div>
+    </div>
+    <script>
+      let abc = document.getElementById("abc");
+      let abc_children = abc.children;
+      let abc_childNodes = abc.childNodes;
+
+      console.log("abc : ", abc);
+      console.log("abc.children : ", abc.children[0]);
+      console.log("htmlCollection  :", abc_children.namedItem("div_id1"));
+      // children : HTMLCollection 배열
+      // HTMLCollection : 요소노드만 포함 (태그)
+      // childNodes : NodeList 배열
+      console.log("abc.childNodes : ", abc.childNodes[3]); // NodeList : 인덱스 외에 접근 불가
+
+      let dom33 = document.getElementsByTagName("div");
+      let dom77 = document.querySelectorAll("div");
+
+      let div1 = document.createElement("div");
+      div1.innerHTML = "aasdfas";
+      abc.appendChild(div1);
+
+      console.log("dom33 : ", dom33);
+      // dom33.forEach((dom) => console.log(dom));
+      console.log("dom77 : ", dom77);
+      dom77.forEach((dom) => console.log("forEach : ", dom));
+
+      // 1.
+      // - HTMLCollection 객체는 <> 요소 노드만 포함하고, (태그 요소만 포함한다.)
+      // - NodeList 객체는 <> 요소 노드, 텍스트 노드 등을 모두 포함한다.
+
+      // 2.
+      // - HTMLCollection 객체는 인덱스, nameditem 으로 자식 요소 접근 가능
+      // - NodeList 객체는 인덱스 방식으로만 자식 요소에 접근할 수 있다. (NodeList 는 요소 노드 외에도 텍스트 노드도 가져오니 item 등으로 접근할 수 없다고 생각하자)
+
+      // 3.
+      // - HTMLCollection 객체는 동적이다
+      // - DOM 을 다루며 새로운 요소를 추가할 때 추가된 요소도 가져올 수 있다.
+      // - NodeList 객체는 정적이다.
+      // - 새로 추가된 요소를 가져올 수 없다.
+
+      // 4.
+      // - HTMLCollection[] : 실제 배열 x, 배열과 유사한 객체, forEach 를 사용할 수 없다.
+      // - NodeList[] : 실제 배열이기 때문에 forEach 문을 사용할 수 있다.
+    </script>
+  </body>
+</html>

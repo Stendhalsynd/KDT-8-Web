@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 500px;
+        height: 500px;
+        background-color: beige;
+      }
+      .box {
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+      }
+      #green {
+        background-color: greenyellow;
+      }
+      #red {
+        background-color: rosybrown;
+      }
+      .abc {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="green">1</div>
+      <div class="box" id="red">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+    </div>
+    <input type="text" name="username" id="username" />
+    <a href="https://google.com" id="google">구글</a>
+    <script>
+      let div1 = document.getElementById("green");
+      console.log("div1, getElementById ", div1);
+
+      // 1. 태그의 내부 내용을 변경
+      // inneerHTML : HTML 요소를 넣는다
+      // innerText : 문자열을 넣는다, 공백 문자 제거
+      // textContent : 문자열을 넣는 거, 공백 문자 그대로 반환
+
+      // div1.innerHTML = "여기는 <br>태그입니다.</br>";
+      // div1.innerText = "   여기는 <br>태그입니다.</br>";
+      div1.textContent = "   여기는 <br>태그입니다.</br>";
+
+      // 2. 속성 변경
+      let google = document.getElementById("google");
+      console.log("google : ", google);
+      console.log("google.href : ", google.href);
+      google.href = "https://naver.com"; // 속성을 이 방식으로 변환할 수 있다.
+      google.setAttribute("href", "https://daum.net"); // 혹은 속성을 setAttribute 를 통해 변환시킬 수 있다.
+
+      google.style = "color: red;";
+      google.style.color = "black";
+      google.style.border = "1px solid black";
+
+      // 3. class 변경 ( classList )
+      console.log("div1 classList : ", div1.classList); // DOMTokenList ['box', value: 'box']
+      console.log("google classList : ", google.classList);
+      google.classList.add("box");
+      console.log("google classList add : ", google.classList);
+
+      console.log(
+        "google classList contains - true : ",
+        google.classList.contains("box")
+      );
+      google.classList.remove("box");
+      console.log("google classList remove : ", google.classList);
+
+      console.log(
+        "google classList contains - false ",
+        google.classList.contains("box")
+      );
+
+      // classList.add : 클래스 추가
+      // classList.remove : 클래스 제거
+      // classList.contains : 클래스 유무 불린형
+      // classList.toggle : 클래스 있으면 제거, 없으면 추가
+    </script>
+
+    <button onclick="toggleClass();">toggle</button>
+    <style>
+      .d-none {
+        opacity: 0.5;
+      }
+    </style>
+    <script>
+      function toggleClass() {
+        // button xormdp d-none 클래스를 버튼을 누를때마다 추가, 삭제 반복
+        let button = document.getElementsByTagName("button");
+        console.log("button : ", button[0]);
+
+        // 1.
+        // if (button[0].classList.contains("d-none")) {
+        //   button[0].classList.remove("d-none");
+        // } else {
+        //   button[0].classList.add("d-none");
+        // }
+
+        // 2.
+        button[0].classList.toggle("d-none");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function calc() {
+        let val1 = Number(document.getElementById("val1").value);
+        let val2 = Number(document.getElementById("val2").value);
+        let op = document.getElementById("op").value;
+        let result = document.getElementById("result");
+        switch (op) {
+          case "+":
+            result.value = val1 + val2;
+            break;
+          case "-":
+            result.value = val1 - val2;
+            break;
+          case "*":
+            result.value = val1 * val2;
+            break;
+          case "/":
+            result.value = Math.floor(val1 / val2);
+            break;
+        }
+        // result.value = eval(val1 + op + val2); // 사용하지 않는 것을 권장 -> 연산자의 종류에 상관없이 실행해버리니 정보를 탈취당할 우려가 있어서 사용하지 않도록 권장한다.
+      }
+      function reset() {
+        let val1 = document.getElementById("val1");
+        let val2 = document.getElementById("val2");
+        let op = document.getElementById("op");
+        let result = document.getElementById("result");
+
+        val1.value = "";
+        val2.value = "";
+        op.value = "";
+        result.value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <hr />
+    <span>값1:</span><input id="val1" type="text" /><br />
+    <span>값2:</span><input id="val2" type="text" /><br />
+    <span>연산자:</span><input id="op" type="text" /><br />
+    <span>결과:</span><input id="result" type="text" /><br />
+    <br />
+    <button onclick="calc();">계산하기</button>
+    <button onclick="reset();">초기화</button>
+  </body>
+</html>

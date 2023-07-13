@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        display: inline-block;
+        width: 45px;
+        text-align: center;
+      }
+      .input {
+        display: block;
+      }
+      table {
+        border: 1px solid black;
+        border-spacing: 2px;
+      }
+      td,
+      th {
+        padding: 10px;
+        border: 1px solid #333333;
+      }
+    </style>
+    <script>
+      function add() {
+        let writer = document.getElementById("writer").value;
+        let content = document.getElementById("content").value;
+
+        let table = document.getElementById("table");
+
+        let tr = document.createElement("tr");
+
+        let td_number = Number(table.children.length);
+        // document.querySelectorAll('tr').length;
+
+        let td_num = document.createElement("td");
+        td_num.innerText = td_number;
+
+        let td_writer = document.createElement("td");
+        td_writer.innerText = writer;
+
+        let td_content = document.createElement("td");
+        td_content.innerText = content;
+
+        let td_today = document.createElement("td");
+        let today = new Date();
+        let year = today.getFullYear();
+        let month = today.getMonth();
+        let date = today.getDate();
+        let hour = today.getHours();
+        let minute = today.getMinutes();
+        td_today.innerText = `${year}-${month}-${date} ${hour}:${minute}`;
+
+        tr.append(td_num);
+        tr.append(td_writer);
+        tr.append(td_content);
+        tr.append(td_today);
+
+        table.append(tr);
+
+        document.getElementById("writer").value = "";
+        document.getElementById("content").value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <p>방명록입니다.</p>
+    <div>작성자</div>
+    <input id="writer" type="text" /><br />
+    <div>내용</div>
+    <textarea id="content" cols="100vw" rows="1"></textarea>
+    <br />
+    <button onclick="add();">작성</button>
+    <table id="table" border="1">
+      <tr>
+        <th>번호</th>
+        <th>작성자</th>
+        <th>내용</th>
+        <th>작성일</th>
+      </tr>
+    </table>
+  </body>
+</html>
