@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+      integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      th,
+      td {
+        width: 300px;
+        height: 80px;
+        vertical-align: top;
+      }
+      th {
+        color: green;
+      }
+      tr > td:first-child {
+        color: red;
+      }
+      tr > td:last-child {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    날짜: <input type="text" class="date" /><br />
+    내용: <input type="text" class="content" /><br />
+    <button>작성</button>
+    <table>
+      <tr>
+        <th colspan="7">2022년 7월</th>
+      </tr>
+      <tr>
+        <td>일</td>
+        <td>월</td>
+        <td>화</td>
+        <td>수</td>
+        <td>목</td>
+        <td>금</td>
+        <td>토</td>
+      </tr>
+      <tr>
+        <td colspan="5"></td>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+        <td>20</td>
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>28</td>
+        <td>29</td>
+        <td>30</td>
+      </tr>
+      <tr>
+        <td>31</td>
+        <td colspan="6"></td>
+      </tr>
+    </table>
+    <script>
+      let trs = $("table tr").children();
+      // let sundays = [trs[1], trs[11], trs[18], trs[25], trs[32], trs[39]];
+      // let saturdays = [trs[7], trs[10], trs[17], trs[24], trs[31], trs[38]];
+      // $(sundays).attr("style", "color: red");
+      // $(saturdays).attr("style", "color: blue");
+
+      // for (let i = 9; i <= 39; i++) {
+      //   // event.currentTarget 도 사용가능하다.
+      //   $(trs[i]).click(function () {
+      //     $(".date").val(`${i - 8}`);
+      //   });
+      // }
+
+      $("td").click(function () {
+        let date = $(this).text();
+        $(".date").val(date);
+      });
+
+      $("button").click(add);
+
+      function add() {
+        let date = Number($(".date").val());
+        let content = $(".content").val();
+
+        $(trs[`${date + 8}`]).append(`<br>${content}`);
+        // append 는 html 문서로 넣어준다. 마치 inenrHTML 처럼
+      }
+    </script>
+  </body>
+</html>

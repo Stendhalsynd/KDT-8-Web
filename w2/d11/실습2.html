@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+      integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .color,
+      .color_1 {
+        background-color: red;
+      }
+      .color_2 {
+        background-color: orange;
+      }
+      .color_3 {
+        background-color: yellow;
+      }
+      .color_4 {
+        background-color: green;
+      }
+      .color_5 {
+        background-color: blue;
+      }
+      .color_6 {
+        background-color: purple;
+      }
+      #button {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button" class="color" onclick="changeColor()"></button>
+
+    <script>
+      // $(button).click(changeColor);
+
+      function changeColor() {
+        let prevClass = $("button").attr("class");
+        let num = Math.floor(Math.random() * 6);
+
+        $("button").switchClass(`${prevClass}`, `color_${num}`, 1000);
+      }
+    </script>
+  </body>
+</html>
