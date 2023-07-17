@@ -50,4 +50,6 @@
 
 ## day 13
 
-- git merge 'a'
+- git merge 'a 에서 수정'
+- git merge 'b 에서 수정'
+- conflict 해결해서 merge
