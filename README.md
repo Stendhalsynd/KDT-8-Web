@@ -27,3 +27,23 @@
 ## day5, 6
 
 - css position, animation
+
+## day 7
+
+- 대표님 컨설팅
+
+## day 8, 9
+
+- javascript
+
+## day 10
+
+- dom
+
+## day 11
+
+- jQuery
+
+## day 12
+
+- 반응형, bootstrap
