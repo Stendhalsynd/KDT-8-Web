@@ -2,15 +2,15 @@
 
 ## day1
 
-- git, vsCode plugin 
+- git, vsCode plugin
 
 ## day2
 
 - html 기본태그
 
-### 
+###
 
-## day3
+## day3,4
 
 - html semantic 태그
 
@@ -23,3 +23,7 @@
 - 복합
 
 - 가상
+
+## day5, 6
+
+- css position, animation
