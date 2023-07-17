@@ -47,3 +47,7 @@
 ## day 12
 
 - 반응형, bootstrap
+
+## day 13
+
+- git merge 'b'
