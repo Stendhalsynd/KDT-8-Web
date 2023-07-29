@@ -1,36 +1,46 @@
-// const mod = require("./module.js");
-// const connect = require("./module.js");
+// import express from "express";
+const express = require("express");
 
-// import { a, b } from "./module.js";
-// import connect from "./module.js";
-import http from "http";
-import fs from "fs/promises";
+const app = express();
+const PORT = 8000;
 
-// console.log(connect());
-// console.log(a, b);
+// 뷰엔진
+app.set("view engine", "ejs");
+app.set("views", "./views");
 
-// const server = http.createServer((req, res) => {
-//   res.writeHead(200);
-//   res.write("<h1>Hello World</h1>");
-//   res.end("<p>end</p>");
+// 정적인 파일 불러오기
+// app.use("/views", express.static(__dirname + "/views"));
+// app.use("/public", express.static("./public"));
+app.use(express.static("public"));
+
+// app.get("/", function (req, res) {
+//   // res.send("hello express");
+//   res.send({
+//     result: true,
+//     code: 1000,
+//     message: "회원가입에 성공했습니다.",
+//     data: { name: "yunes" },
+//   });
 // });
 
-// server.listen(8080, function () {
-//   console.log("8080번 포트로 서버 실행");
-// });
-
-const server = http.createServer(async function (req, res) {
-  try {
-    const data = await fs.readFile("./index.html");
-    res.writeHead(200);
-    res.end(data);
-  } catch (error) {
-    console.log(error);
-    res.writeHead(404);
-    res.end(error.message);
-  }
+app.get("/test", function (req, res) {
+  // res.render("test");
+  res.render("test", { data: 3 });
 });
 
-server.listen(8080, function () {
-  console.log("8080번 포트로 서버 실행");
+app.get("/try", function (req, res) {
+  // res.render("test");
+  res.render("try");
+});
+
+app.get("/fruit", (req, res) => {
+  res.render("fruit");
+});
+
+app.get("/multiply", function (req, res) {
+  res.render("multiply", { data: 3 });
+});
+
+app.listen(PORT, function () {
+  console.log(`Listening on port ${PORT}! http://localhost:${PORT}`);
 });
