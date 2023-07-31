@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 배열
+      let lists = ["apple", "grape"];
+      [item1, item2, item3 = "banana"] = lists;
+
+      console.log("item1 : ", item1);
+      console.log("item2 : ", item2);
+      console.log("item3 : ", item3);
+
+      // 교환
+      let x = 1,
+        y = 2;
+      [x, y] = [y, x];
+      console.log("x, y : ", x, y);
+
+      // 객체
+      const person = {
+        name: "John",
+        age: 20,
+        friends: ["Alex", "Kevin"],
+        hello: (function () {
+          console.log("hello~");
+        })(),
+      };
+      const { age, name, friends, hello } = person;
+      hello;
+      console.log("age, name, friends : ", age, name, friends);
+
+      // 객체 구조 분해
+      const {
+        name: myName,
+        age: myAge,
+        friends: myFriends,
+        hello: myHello,
+      } = person;
+    </script>
+  </body>
+</html>
