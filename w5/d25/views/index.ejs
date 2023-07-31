@@ -6,6 +6,32 @@
     <title>Document</title>
   </head>
   <body>
-    <h1><%= title %></h1>
+    <h1><%= title %>을 해봅시다</h1>
+
+    <h3>GET 요청</h3>
+    <form action="/getForm" method="get">
+      <input type="text" placeholder="ID" name="id" required />
+      <input type="password" placeholder="PW" name="pw" required />
+      <button type="submit">제출</button>
+    </form>
+    <h3>POST 요청</h3>
+    <form action="/postForm" method="post">
+      <input type="text" placeholder="ID" name="id" readonly />
+      <input
+        type="password"
+        placeholder="PW"
+        name="pw"
+        pattern="([a-z0-9]){2,10}"
+      /><br />
+      <input type="email" /><br />
+      <input type="radio" /><br />
+      <input type="checkbox" name="" id="" /><br />
+      <input type="tel:010" name="" id="" /><br />
+      <input type="date" name="" id="" /><br />
+      <input type="number" name="" id="" /><br />
+      <input type="datetime" name="" id="" /><br />
+      <input type="time" name="" id="" /><br />
+      <button type="submit">제출</button><br />
+    </form>
   </body>
 </html>

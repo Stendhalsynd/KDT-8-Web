@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <form action="/signup" method="get" id="get">
+      이름
+      <input type="text" name="name" />
+      <fieldset form="get">
+        <legend>성별</legend>
+        <label
+          ><input type="radio" id="man" name="sex" value="남자" />남자<input
+            type="radio"
+            id="female"
+            name="sex"
+            value="여자"
+          />여자</label
+        >
+      </fieldset>
+      <br />
+      <fieldset form="get">
+        <legend>생년월일</legend>
+        <label>
+          <select name="year">
+            <option>2010</option>
+            <option>2009</option>
+            <option>2008</option>
+            <option>2007</option>
+            <option>2006</option>
+            <option>2005</option>
+            <option>2004</option>
+            <option>2003</option>
+            <option>2002</option>
+            <option>2001</option>
+            <option>2000</option>
+            <option>1999</option>
+            <option>1998</option>
+            <option>1997</option>
+          </select>
+          년
+          <select name="month">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+          월
+          <select name="day">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+          </select>
+          일
+        </label>
+      </fieldset>
+      <br />
+      <fieldset form="get">
+        <legend>관심사</legend>
+        <label
+          ><input type="checkbox" name="favorate" value="여행" />여행<input
+            type="checkbox"
+            name="favorate"
+            value="패션"
+          />패션<input
+            type="checkbox"
+            name="favorate"
+            vlaue="음식"
+          />음식</label
+        >
+      </fieldset>
+      <br />
+      <button type="submit">회원가입</button>
+    </form>
+  </body>
+</html>
