@@ -35,6 +35,16 @@ app.post("/axios", (req, res) => {
   res.send(req.body);
 });
 
+app.get("/fetch", (req, res) => {
+  console.log("backend", req.query);
+  res.send(req.query);
+});
+
+app.post("/fetch", (req, res) => {
+  console.log("backend", req.body);
+  res.send(req.body);
+});
+
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
