@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <form action="/axios" name="login">
+      <fieldset form="post">
+        <legend>로그인</legend>
+        <label>
+          <label for="id">아이디</label>
+          <input type="text" id="id" required />
+          <br />
+          <label for="pw">비밀번호</label>
+          <input type="password" id="pw" required />
+          <br />
+          <button type="button" onclick="axiosPost()">로그인</button>
+          <div class="result"></div>
+        </label>
+      </fieldset>
+    </form>
+    <script>
+      const resultBox = document.querySelector(".result");
+      async function axiosPost() {
+        console.log("axios post");
+        const form = document.forms["login"];
+        const data = {
+          id: form.id.value,
+          pw: form.pw.value,
+        };
+        const result = await axios({
+          method: "POST",
+          url: "/axios",
+          data,
+        });
+        const response = result.data;
+        resultBox.textContent = `${response}`;
+        resultBox.style.color = result.data.length > 6 ? "red" : "blue";
+      }
+    </script>
+  </body>
+</html>
