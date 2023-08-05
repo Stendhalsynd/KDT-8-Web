@@ -11,7 +11,13 @@ const getVisitors = (callback) => {
   conn.query(`SELECT * FROM visitor`, (err, rows) => {
     if (err) throw err;
 
-    console.log("Visitor.js: ", rows);
+    callback(rows);
+  });
+};
+
+const getVisitor = (id, callback) => {
+  conn.query(`SELECT * FROM visitor where id = ?`, [id], (err, rows) => {
+    if (err) throw err;
     callback(rows);
   });
 };
@@ -26,7 +32,34 @@ const addVisitor = (name, comment, callback) => {
   });
 };
 
-export { getVisitors, addVisitor };
+const editVisitor = (name, comment, id, callback) => {
+  const sql = `UPDATE visitor SET name = ?, comment = ? WHERE id = ?`;
+  conn.query(sql, [name, comment, id], (err, result) => {
+    if (err) throw err;
+    // 콜백 함수로 추가된 데이터를 전달
+    // callback(result);
+  });
+  conn.query(`SELECT * FROM visitor`, (err, rows) => {
+    if (err) throw err;
+
+    console.log("Visitor.js: ", rows);
+    callback(rows);
+  });
+};
+
+const deleteVisitor = (id, callback) => {
+  conn.query(`DELETE FROM visitor where id = ?`, [id], (err, rows) => {
+    if (err) throw err;
+  });
+  conn.query(`SELECT * FROM visitor`, (err, rows) => {
+    if (err) throw err;
+
+    console.log("Visitor.js: ", rows);
+    callback(rows);
+  });
+};
+
+export { getVisitors, getVisitor, addVisitor, editVisitor, deleteVisitor };
 
 // exports.getVisitors = () => {
 //   return [
