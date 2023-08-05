@@ -1,4 +1,9 @@
-const express = require("express");
+// const express = require("express");
+import express from "express";
+import path from "path";
+import router from "../mvc_mysql/routes/index.js";
+
+const __dirname = path.resolve();
 const app = express();
 const PORT = 8000;
 
@@ -10,8 +15,8 @@ app.set("/static", express.static(__dirname + "/static"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const indexRouter = require("./routes"); // index.js 생략
-app.use("/", indexRouter);
+// const indexRouter = require("./routes"); // index.js 생략
+app.use("/", router);
 
 app.get("*", (req, res) => {
   res.render("404");
