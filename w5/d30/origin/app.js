@@ -10,11 +10,9 @@ app.set("/static", express.static(__dirname + "/static"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const indexRouter = require("./routes"); // index.js 생략
-app.use("/", indexRouter);
-
-app.get("*", (req, res) => {
-  res.render("404");
+// router
+app.get("/", (req, res) => {
+  res.render("index");
 });
 
 app.listen(PORT, () => {
