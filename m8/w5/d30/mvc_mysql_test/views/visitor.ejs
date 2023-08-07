@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visitor</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <form name="visitorForm">
+      <fieldset>
+        <legend>방명록 등록</legend>
+        <input type="hidden" name="id">
+        <input type="text" name="name" placeholder="username"/>
+        <br>
+        <input type="text" name="comment" placeholder="guestbook"/>
+        <br>
+        <button type="button" onclick="addComment()">등록</button>
+      </fieldset>
+    </form>
+    <p>
+      <table border="1" cellspacing="0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>작성자</th>
+            <th>방명록</th>
+            <th>수정</th>
+            <th>삭제</th>
+          </tr>
+        </thead>
+        <tbody name="tbody">
+          <% for (let i = 0; i < data.length; i++) { %>
+          <tr id="tr_<%= data[i].id %>">
+            <td><%= data[i].id %></td>
+            <td><%= data[i].name %></td>
+            <td><%= data[i].comment %></td>
+            <td>
+              <button type="button" onclick="getComment('<%= data[i].id %>', '<%= data[i].name %>', '<%= data[i].comment %>')">수정</button>
+            </td>
+            <td>
+              <button type="button" onclick="deleteComment('<%= data[i].id %>')">삭제</button>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </p>
+    
+    <!-- JavaScript 추가 -->
+    <script>
+      function getComment(id, name, comment) {
+        const visitorForm = document.forms["visitorForm"];
+        visitorForm.id.value = id;
+        visitorForm.name.value = name;
+        visitorForm.comment.value = comment;
+      }
+
+      function deleteComment(id) {
+        const data = {
+          id
+        }
+        axios.delete('/visitor/delete', { data })
+        .then(function(res) {
+          window.location.reload();
+        })
+        .catch(function(error) {
+          console.error(error);
+        })
+      }
+
+      function addComment() {
+        const form = document.forms["visitorForm"];
+        const data = {
+          name: form.name.value,
+          comment: form.comment.value,
+          id: form.id?.value,
+        };
+        axios.post('/visitor/write', data)
+          .then(function(response) {
+              // 서버 응답에 따른 처리 (예: 새로고침 등)
+              window.location.reload();
+            })
+            .catch(function(error) {
+              console.error(error);
+            });
+      }
+    </script>
+
+  </body>
+</html>
