@@ -38,15 +38,18 @@ const setSignin = (req, res) => {
   const pw = req.body.pw;
   login(userid, pw, (result) => {
     if (result.length === 1) {
-      res.render("profile");
+      res.render("profile", { name: result[0].name });
+      // res.redirect("/user/profile");
     } else {
-      res.render("signin");
+      res.redirect("signin");
     }
   });
 };
 
 const getProfile = (req, res) => {
-  res.render("profile");
+  // 세션에서 사용자 정보를 가져옴
+  const name = req.session.user ? req.session.user.name : null;
+  res.render("profile", { name });
 };
 
 // const getVisitors = (req, res) => {

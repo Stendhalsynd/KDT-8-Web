@@ -6,6 +6,22 @@
     <title>Document</title>
   </head>
   <body>
-    <p>PROFILE</p>
+    <h1>프로필</h1>
+    <h2>
+      <span>사용자 이름 : </span>
+      <input
+        type="text"
+        name="name"
+        placeholder="username"
+        value="<%= name %>"
+        disabled
+      />
+    </h2>
+    <form action="/user/profile/edit" method="post">
+      <button type="submit">수정</button>
+    </form>
+    <form action="/user/profile/delete" method="post">
+      <button type="submit">삭제</button>
+    </form>
   </body>
 </html>

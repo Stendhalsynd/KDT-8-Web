@@ -29,7 +29,6 @@ const getUser = (userid, pw, callback) => {
     [userid, pw],
     (err, row) => {
       if (err) throw err;
-      console.log("row : ", row);
       callback(row);
     }
   );

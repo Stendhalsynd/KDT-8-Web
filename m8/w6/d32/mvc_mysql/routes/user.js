@@ -8,6 +8,7 @@ import {
   getSignin,
   setSignin,
   getProfile,
+  // editProfile,
   // getVisitors,
   // getVisitor,
   // addVisitor,
@@ -22,7 +23,8 @@ router.get("/user/signup", getSignup); // GET /user/signup
 router.post("/user/signup", setSignup); // POST /user/signup
 router.get("/user/signin", getSignin); // GET /user/singin
 router.post("/user/signin", setSignin); // POST /user/singin
-router.get("/user/profile", getProfile); // GET /user/profile
+router.post("/user/profile", getProfile); // POST /user/profile
+// router.post("/user/profile/edit", editProfile); // GET / user/profile/eidt
 // router.get("/visitor", getVisitors); // GET /comments
 // router.get("/visitor/get", getVisitor); // GET /comment/
 // router.post("/visitor/write", addVisitor); // POST /comment
