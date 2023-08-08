@@ -1,5 +1,3 @@
-// const express = require("express");
-// const controller = require("../controller/Cvisitor");
 import express from "express";
 import {
   main,
@@ -8,7 +6,7 @@ import {
   addVisitor,
   editVisitor,
   deleteVisitor,
-} from "../controller/Cvisitor.js";
+} from "../controller/Cuser.js";
 const router = express.Router();
 
 // localhost:PORT/
