@@ -23,7 +23,6 @@ const getVisitor = (id, callback) => {
 };
 
 const getUser = (userid, pw, callback) => {
-  console.log("userid, pw : ", userid, pw);
   conn.query(
     `SELECT * FROM user where userid = ? and pw = ?`,
     [userid, pw],
@@ -32,6 +31,13 @@ const getUser = (userid, pw, callback) => {
       callback(row);
     }
   );
+};
+
+const getProfile = (name, callback) => {
+  conn.query(`SELECT * FROM user where name = ?`, [name], (err, row) => {
+    if (err) throw err;
+    callback(row);
+  });
 };
 
 const setSignup = (userid, name, pw, callback) => {
@@ -54,6 +60,15 @@ const addVisitor = (name, comment, callback) => {
   });
 };
 
+const editProfile = (name, id, callback) => {
+  const sql = `UPDATE user SET name = ? WHERE id = ?`;
+  conn.query(sql, [name, id], (err, result) => {
+    if (err) throw err;
+    // 콜백 함수로 추가된 데이터를 전달
+    // callback(result);
+  });
+};
+
 const editVisitor = (name, comment, id, callback) => {
   const sql = `UPDATE visitor SET name = ?, comment = ? WHERE id = ?`;
   conn.query(sql, [name, comment, id], (err, result) => {
@@ -66,6 +81,12 @@ const editVisitor = (name, comment, id, callback) => {
 
     console.log("Visitor.js: ", rows);
     callback(rows);
+  });
+};
+
+const deleteProfile = (id, callback) => {
+  conn.query(`DELETE FROM user where id = ?`, [id], (err, rows) => {
+    if (err) throw err;
   });
 };
 
@@ -84,6 +105,9 @@ const deleteVisitor = (id, callback) => {
 export {
   setSignup,
   getUser,
+  getProfile,
+  editProfile,
+  deleteProfile,
   // getVisitors,
   // getVisitor,
   // addVisitor,

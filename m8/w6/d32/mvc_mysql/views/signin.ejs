@@ -4,17 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <form action="/user/signin" method="post">
+    <form>
       <fieldset>
         <legend>로그인</legend>
-        <input type="text" name="userid" placeholder="userid" />
+        <input type="text" id="userid" name="userid" placeholder="userid" />
         <br />
-        <input type="text" name="pw" placeholder="password" />
+        <input type="text" id="pw" name="pw" placeholder="password" />
         <br />
-        <button type="submit">로그인하기</button>
+        <button type="button" onclick="login()">로그인하기</button>
       </fieldset>
     </form>
+    <script>
+      async function login() {
+        const userid = document.getElementById("userid").value;
+        const pw = document.getElementById("pw").value;
+        const data = {
+          name: "",
+        };
+        const params = {
+          name: "",
+        };
+        try {
+          const response = await axios.post("/user/signin", {
+            userid: userid,
+            pw: pw,
+          });
+          data.name = response.data.name;
+          params.name = response.data.name;
+          if (response.data.success) {
+            // axios.post("/user/profile", data);
+            sendDataToServer(params);
+            window.location.href = `/user/profile?name=${data.name}`;
+          } else {
+            alert("로그인에 실패했습니다. 다시 시도해주세요.");
+          }
+        } catch (error) {
+          alert("로그인 에러");
+          console.error("로그인 에러:", error);
+        }
+      }
+
+      async function sendDataToServer(data) {
+        try {
+          console.log("data : ", data);
+          // 페이지 이동 후에 데이터를 서버로 전송
+          await axios.get(`/user/profile?name=${data.name}`);
+        } catch (error) {
+          console.error("데이터 전송 에러:", error);
+        }
+      }
+    </script>
   </body>
 </html>

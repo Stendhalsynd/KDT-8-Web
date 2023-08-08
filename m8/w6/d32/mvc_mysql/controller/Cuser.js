@@ -6,6 +6,9 @@ import {
   // deleteVisitor as deleteComment,
   setSignup as addUser,
   getUser as login,
+  editProfile as editUser,
+  getProfile as getUser,
+  deleteProfile as deleteUser,
 } from "../model/User.js";
 import express from "express";
 
@@ -33,23 +36,63 @@ const getSignin = (req, res) => {
   res.render("signin");
 };
 
-const setSignin = (req, res) => {
+// const setSignin = (req, res) => {
+//   const userid = req.body.userid;
+//   const pw = req.body.pw;
+//   login(userid, pw, (result) => {
+//     if (result.length === 1) {
+//       res.render("profile", { name: result[0].name });
+//       // res.redirect("/user/profile");
+//     } else {
+//       res.redirect("signin");
+//     }
+//   });
+// };
+
+// 현재 코드와 동일한 내용
+
+const setSignin = async (req, res) => {
   const userid = req.body.userid;
   const pw = req.body.pw;
-  login(userid, pw, (result) => {
-    if (result.length === 1) {
-      res.render("profile", { name: result[0].name });
-      // res.redirect("/user/profile");
-    } else {
-      res.redirect("signin");
-    }
-  });
+  try {
+    login(userid, pw, (result) => {
+      if (result.length === 1) {
+        // 로그인 성공시
+        res.json({ success: true, name: result[0].name });
+      } else {
+        // 로그인 실패시
+        res.json({ success: false });
+      }
+    });
+  } catch (error) {
+    console.error("로그인 처리 에러:", error);
+    res.status(500).json({ success: false });
+  }
 };
 
 const getProfile = (req, res) => {
-  // 세션에서 사용자 정보를 가져옴
-  const name = req.session.user ? req.session.user.name : null;
-  res.render("profile", { name });
+  res.render("profile", { name: req.query.name });
+};
+
+const editProfile = (req, res) => {
+  const oldName = req.body.oldName;
+  const newName = req.body.newName;
+
+  getUser(oldName, (result) => {
+    editUser(newName, result[0]?.id, () => {
+      console.log("test");
+      alert("회원 정보 수정!");
+    });
+  });
+};
+
+const deleteProfile = (req, res) => {
+  const name = req.body.name;
+  getUser(name, (result) => {
+    deleteUser(result[0].id, () => {
+      res.json({ success: true });
+    });
+  });
 };
 
 // const getVisitors = (req, res) => {
@@ -109,6 +152,8 @@ export {
   getSignin,
   setSignin,
   getProfile,
+  editProfile,
+  deleteProfile,
   // getVisitors,
   // getVisitor,
   // addVisitor,
