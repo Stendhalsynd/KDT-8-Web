@@ -1,0 +1,64 @@
+<!-- views/user_info.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- head 부분은 그대로 유지합니다. -->
+  </head>
+  <body>
+    <h1>사용자 정보</h1>
+    <p>아이디: <%= user.userid %></p>
+    <!-- 필요한 사용자 정보 출력 -->
+
+    <!-- 이름 수정을 위한 form -->
+    <form
+      id="nameForm"
+      action="/sequelize/user/<%= user.id %>/edit"
+      method="post"
+    >
+      <p>이름: <%= user.name %></p>
+      <button type="button" id="editButton">수정</button>
+
+      <!-- 이름 수정 입력 필드 (초기에는 숨겨두기) -->
+      <input
+        type="text"
+        name="newName"
+        id="newNameInput"
+        value="<%= user.name %>"
+        style="display: none"
+      />
+      <button type="submit" id="saveButton" style="display: none">저장</button>
+    </form>
+
+    <!-- 삭제 버튼 폼 -->
+    <form
+      id="deleteForm"
+      action="/sequelize/user/<%= user.id %>/delete"
+      method="post"
+    >
+      <input type="hidden" name="_method" value="DELETE" />
+      <button type="submit">삭제</button>
+    </form>
+
+    <script>
+      const editButton = document.getElementById("editButton");
+      const newNameInput = document.getElementById("newNameInput");
+      const saveButton = document.getElementById("saveButton");
+
+      editButton.addEventListener("click", function () {
+        editButton.style.display = "none";
+        newNameInput.style.display = "inline";
+        saveButton.style.display = "inline";
+      });
+
+      document
+        .getElementById("deleteForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (confirm("정말로 삭제하시겠습니까?")) {
+            this.submit();
+          }
+        });
+    </script>
+  </body>
+</html>

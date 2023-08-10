@@ -209,6 +209,80 @@ const deleteProfile = (req, res) => {
 //   });
 // };
 
+/** sequelize */
+
+/** create */
+
+// 기존 setSignup 함수를 수정합니다.
+const getSequelizeSignup = (req, res) => {
+  res.render("signup2"); // signup.ejs 뷰 렌더링
+};
+
+const setSequelizeSignup = async (req, res) => {
+  const { userid, name, pw } = req.body;
+
+  try {
+    await models.User.create({
+      userid,
+      name,
+      pw,
+    });
+    res.render("index"); // index.ejs 뷰 렌더링
+  } catch (error) {
+    console.error("회원가입 에러:", error);
+    res.status(500).json({ success: false });
+  }
+};
+
+/** read */
+
+const getSequelizeUser = async (req, res) => {
+  const userId = req.params.id;
+
+  try {
+    const user = await models.User.findOne({
+      where: { id: userId },
+    });
+    res.render("user_info", { user }); // user_info.ejs 뷰 렌더링
+  } catch (error) {
+    console.error("사용자 조회 에러:", error);
+    res.status(500).json({ success: false });
+  }
+};
+
+/** update */
+const editSequelizeUser = async (req, res) => {
+  const userId = req.params.id;
+  const { newName } = req.body;
+
+  try {
+    await models.User.update(
+      { name: newName },
+      {
+        where: { id: userId },
+      }
+    );
+    res.redirect(`/sequelize/user/${userId}`); // 사용자 정보 조회 페이지로 리디렉션
+  } catch (error) {
+    console.error("사용자 정보 수정 에러:", error);
+    res.status(500).json({ success: false });
+  }
+};
+
+/** delete */
+const deleteSequelizeUser = async (req, res) => {
+  const userId = req.params.id;
+  try {
+    await models.User.destroy({
+      where: { id: userId },
+    });
+    res.redirect("/sequelize/signup"); // 메인 페이지로 리다이렉트
+  } catch (error) {
+    console.error("사용자 정보 삭제 에러:", error);
+    res.status(500).json({ success: false });
+  }
+};
+
 // export {
 //   getUsers,
 //   main,
@@ -232,4 +306,9 @@ module.exports = {
   getProfile,
   editProfile,
   deleteProfile,
+  getSequelizeSignup,
+  setSequelizeSignup,
+  getSequelizeUser,
+  editSequelizeUser,
+  deleteSequelizeUser,
 };

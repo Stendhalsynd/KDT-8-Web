@@ -1,0 +1,31 @@
+<!-- views/delete_user.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- head 부분은 그대로 유지합니다. -->
+  </head>
+  <body>
+    <h1>사용자 정보 삭제</h1>
+    <p>아이디: <%= user.userid %></p>
+    <p>이름: <%= user.name %></p>
+    <!-- 필요한 사용자 정보 출력 -->
+    <form
+      id="deleteForm"
+      action="/sequelize/user/<%= user.id %>/delete"
+      method="post"
+    >
+      <button type="submit">삭제하기</button>
+    </form>
+    <script>
+      document
+        .getElementById("deleteForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (confirm("정말로 삭제하시겠습니까?")) {
+            this.submit();
+          }
+        });
+    </script>
+  </body>
+</html>

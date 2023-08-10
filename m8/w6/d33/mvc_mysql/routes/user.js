@@ -31,12 +31,30 @@ const {
   getProfile,
   editProfile,
   deleteProfile,
+  getSequelizeSignup,
+  setSequelizeSignup,
+  getSequelizeUser,
+  editSequelizeUser,
+  deleteSequelizeUser,
 } = require("../controller/Cuser.js");
 
 const router = express.Router();
 
+/** sequelize */
+
 router.get("/sequelize", getUsers);
 router.get("/sequelize/one", getUser);
+
+router.get("/sequelize/signup", getSequelizeSignup); // GET /sequelize/signup
+router.post("/sequelize/signup", setSequelizeSignup); // POST /sequelize/signup
+
+router.get("/sequelize/user/:id", getSequelizeUser); // GET /sequelize/user/:id
+
+router.post("/sequelize/user/:id/edit", editSequelizeUser); // POST /sequelize/user/:id/edit
+
+router.post("/sequelize/user/:id/delete", deleteSequelizeUser); // DELETE /sequelize/user/:id/delete
+
+///////////
 
 // localhost:PORT/
 router.get("/user", main); // GET /user
