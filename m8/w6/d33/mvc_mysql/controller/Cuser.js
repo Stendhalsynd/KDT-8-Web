@@ -1,18 +1,3 @@
-// import {
-//   // getVisitors as getVisitorList,
-//   // getVisitor as getComment,
-//   // addVisitor as addComment,
-//   // editVisitor as editComment,
-//   // deleteVisitor as deleteComment,
-//   setSignup as addUser,
-//   getUser as login,
-//   editProfile as editUser,
-//   getProfile as getUser,
-//   deleteProfile as deleteUser,
-// } from "../model/User.js";
-// import express from "express";
-
-// import models from "../models";
 const express = require("express");
 const models = require("../models");
 

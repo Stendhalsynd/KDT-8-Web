@@ -8,28 +8,27 @@ const StudentModel = (sequelize) => {
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING(20),
+    userid: {
+      type: DataTypes.STRING(31),
       allowNull: false,
     },
-    major: {
-      type: DataTypes.STRING(30),
+    email: {
+      type: DataTypes.STRING(63),
+    },
+    password: {
+      type: DataTypes.STRING(255),
       allowNull: false,
     },
-    enroll: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
-    },
+    // createdAt: {
+    //   allowNull: false,
+    //   type: DataTypes.DATE,
+    //   defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+    // },
+    // updatedAt: {
+    //   allowNull: false,
+    //   type: DataTypes.DATE,
+    //   defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+    // },
   });
   return Student;
 };
