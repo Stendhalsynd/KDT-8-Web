@@ -20,12 +20,12 @@
       data-bs-target="#exampleModal"
       hidden
     >
-      <div><%= showModal %></div>
       <span>Launch demo modal</span>
     </button>
 
     <!-- Modal -->
-    <div
+    <% if (!cookie) { %>
+      <div
       class="modal fade"
       id="exampleModal"
       tabindex="-1"
@@ -34,6 +34,7 @@
       <% if (showModal) { %>
         data-bs-backdrop="static"
       <% } %>
+
     > 
       
       <div class="modal-dialog">
@@ -65,6 +66,7 @@
         </div>
       </div>
     </div>
+    <% } %>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const myModal = new bootstrap.Modal(
@@ -74,33 +76,25 @@
 
         const watchCheckbox = document.getElementById('watchCheckbox')
 
-        // 체크박스 클릭 이벤트 리스너
-        watchCheckbox.addEventListener("change", () => {
+        // btn-close 버튼 클릭 이벤트 리스너
+        const btnClose = document.querySelector(".btn-close");
+        btnClose.addEventListener("click", () => {
+          // 모달이 닫힌 상태에서 체크되어 있다면 쿠키 설정
           const isChecked = watchCheckbox.checked;
-
           // 쿠키 설정 함수
           function setCookie(name, value, days) {
             const date = new Date();
-            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            date.setTime(date.getTime() + days * 10 * 1000);
             const expires = "expires=" + date.toUTCString();
             document.cookie = name + "=" + value + ";" + expires + ";path=/";
           }
-
           // 체크박스 상태에 따라 쿠키 설정 또는 삭제
           if (isChecked) {
-            setCookie("watchToday", "true", 1); // 1일 동안 유지
+            setCookie("watchToday", "true", 1); // 10초 동안 유지
           } else {
             setCookie("watchToday", "", -1); // 쿠키 삭제
           }
         });
-
-        // document.addEventListener('checkModal', () => {
-        //     const myModal = new bootstrap.Modal(
-        //     document.getElementById("exampleModal"),
-        //     options
-        //     );
-        //     console.log('myModal : ', myModal)
-        // })
       });
     </script>
     <script

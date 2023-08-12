@@ -4,6 +4,9 @@ const app = express();
 const PORT = 8000;
 
 app.set("view engine", "ejs");
+// body-parser
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // 세션
 // 옵션객체
@@ -24,9 +27,22 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
-  req.session.name = "홍길동"; // express-session 에서 제공
-  res.send("세션 설정 완료");
+// app.get("/", (req, res) => {
+//   req.session.name = "홍길동"; // express-session 에서 제공
+//   res.send("세션 설정 완료");
+// });
+
+app.get("/default", (req, res) => {
+  res.render("default");
+});
+
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+app.post("/main", (req, res) => {
+  req.session.name = req.body.name;
+  res.render("main", { name: req.session.name });
 });
 
 app.get("/name", (req, res) => {

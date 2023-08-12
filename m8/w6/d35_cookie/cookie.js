@@ -32,10 +32,10 @@ const cookieConfig = {
 app.get("/cookie", (req, res) => {
   const watchTodayCookie = req.cookies.watchToday;
   if (watchTodayCookie === "true") {
-    res.render("cookie", { showModal: false });
+    res.render("cookie", { showModal: false, cookie: req.cookies.watchToday });
   } else {
-    res.cookie("watchToday", "cookieValue", cookieConfig);
-    res.render("cookie", { showModal: true });
+    // res.cookie("watchToday", "cookieValue", cookieConfig);
+    res.render("cookie", { showModal: true, cookie: req.cookies.watchToday });
   }
 });
 
