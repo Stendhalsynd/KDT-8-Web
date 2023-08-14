@@ -12,17 +12,6 @@
     />
   </head>
   <body>
-    <!-- Button trigger modal -->
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-      hidden
-    >
-      <span>Launch demo modal</span>
-    </button>
-
     <!-- Modal -->
     <% if (!cookie) { %>
       <div
@@ -70,17 +59,17 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const myModal = new bootstrap.Modal(
-          document.getElementById("exampleModal")
+          "#exampleModal"
           );
           myModal.show();
 
+        if ( '<%= cookie %>' === '' ) {}
+ 
         const watchCheckbox = document.getElementById('watchCheckbox')
 
         // btn-close 버튼 클릭 이벤트 리스너
         const btnClose = document.querySelector(".btn-close");
         btnClose.addEventListener("click", () => {
-          // 모달이 닫힌 상태에서 체크되어 있다면 쿠키 설정
-          const isChecked = watchCheckbox.checked;
           // 쿠키 설정 함수
           function setCookie(name, value, days) {
             const date = new Date();
@@ -89,7 +78,7 @@
             document.cookie = name + "=" + value + ";" + expires + ";path=/";
           }
           // 체크박스 상태에 따라 쿠키 설정 또는 삭제
-          if (isChecked) {
+          if (watchCheckbox.checked) {
             setCookie("watchToday", "true", 1); // 10초 동안 유지
           } else {
             setCookie("watchToday", "", -1); // 쿠키 삭제

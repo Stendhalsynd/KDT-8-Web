@@ -34,7 +34,6 @@ app.get("/cookie", (req, res) => {
   if (watchTodayCookie === "true") {
     res.render("cookie", { showModal: false, cookie: req.cookies.watchToday });
   } else {
-    // res.cookie("watchToday", "cookieValue", cookieConfig);
     res.render("cookie", { showModal: true, cookie: req.cookies.watchToday });
   }
 });
@@ -43,7 +42,7 @@ app.get("/setCookie", (req, res) => {
   // 쿠키이름, 쿠키값, 옵션객체
   // cookie-parser 가 res.cookie 를 만들어준다.
   res.cookie("myCookie", "myValue", cookieConfig);
-  res.send("set cookie");
+  res.send({ result: true, msg: "쿠키 생성 완료" });
 });
 
 app.get("/getCookie", (req, res) => {
