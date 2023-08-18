@@ -1,6 +1,7 @@
 const express = require("express");
 const crypto = require("crypto");
 const { words } = require("lodash");
+require("dotenv").config();
 const app = express();
 const PORT = 8000;
 
@@ -14,6 +15,8 @@ app.use(express.json());
 
 //router
 app.get("/", (req, res) => {
+  console.log(process.env.NAME);
+  console.log(process.env.NODE_ENV);
   res.render("index");
 });
 
