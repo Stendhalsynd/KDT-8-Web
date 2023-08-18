@@ -57,6 +57,22 @@ exports.get_profile = (req, res) => {
   res.render("profile");
 };
 
+exports.post_profile = async (req, res) => {
+  try {
+    const { userid, pw } = req.body;
+    const user = await User.findOne({
+      where: { userid },
+    });
+    if (comparePassword(pw, user.pw)) {
+      res.json({ result: true, user });
+    } else {
+      res.json({ result: false, message: "프로필 조회에 실패했습니다." });
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 /** bcrypt - 단방향 */
 const bcrypt = require("bcrypt");
 const saltNumber = 10;
