@@ -8,10 +8,20 @@
   </head>
   <body>
     <h1>기초 실습1 암호화 사용하기</h1>
-    <fieldset style="width: 300px">
+    <fieldset style="width: 350px">
       <legend>로그인 및 회원가입하기</legend>
-      <a href="/login"><button>로그인</button></a>
+      <a href="/login"><button>로그인</button></a><br />
       <a href="/signup"><button>회원가입</button></a>
+      <a href="/profile" style="display: none" id="profile"
+        ><button type="button" onclick="profile">내 정보보기</button></a
+      >
     </fieldset>
   </body>
+
+  <script>
+    if (localStorage.getItem("isLogin")) {
+      const profile = document.querySelector("#profile");
+      profile.style.display = "block";
+    }
+  </script>
 </html>

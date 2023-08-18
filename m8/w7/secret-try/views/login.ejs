@@ -28,7 +28,8 @@
       });
       if (res.data.result) {
         console.log("로그인 완료");
-        document.location.href = "/profile";
+        localStorage.setItem("isLogin", true);
+        document.location.href = "/";
       } else {
         alert(res.data.message);
         document.location.reload();

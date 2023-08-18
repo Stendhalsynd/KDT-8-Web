@@ -8,43 +8,16 @@
   </head>
   <body>
     내 프로필
-    <form name="profile-form">
-      <input type="text" name="userid" placeholder="id" /><br />
-      <input type="password" name="pw" placeholder="password" />
-      <br />
-      <button type="button" onclick="profile()">내 정보 보기</button>
-    </form>
-    <fieldset id="info" style="display: none">
+    <fieldset>
       <legend>내 정보</legend>
-      <p id="userId"></p>
       <p id="userName"></p>
     </fieldset>
   </body>
 
   <script>
-    async function profile() {
-      const form = document.forms["profile-form"];
-      const res = await axios({
-        method: "post",
-        url: "/profile",
-        data: {
-          userid: form.userid.value,
-          pw: form.pw.value,
-        },
-      });
-      if (res.data.result) {
-        // alert("사용자 인증 성공");
-        const infoFieldset = document.getElementById("info");
-        const userId = document.getElementById("userid");
-        const userName = document.getElementById("userName");
-        console.log("res.data.user : ", res.data.user);
-        userId.innerHTML = `User ID: ${res.data.user.userid}`;
-        userName.innerHTML = `Name: ${res.data.user.name}`;
-        infoFieldset.style.display = "block";
-      } else {
-        alert(res.data.message);
-        document.location.reload();
-      }
-    }
+    const userName = localStorage.getItem("name");
+
+    const userNameElement = document.getElementById("userName");
+    userNameElement.textContent = `${userName} 님 환영합니다!`;
   </script>
 </html>
