@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <% if (getUserInfo) { %>
+    <h1>resultGet</h1>
+    <ul>
+      <li>이름 : <span><%= getUserInfo.username %></span></li>
+      <li>성별 : <span><%= getUserInfo.gender %></span></li>
+      <li>
+        생일 : <span><%= getUserInfo.birthYear %></span>년
+        <span><%= getUserInfo.birthMonth %></span>월
+        <span><%= getUserInfo.birthDay %></span>일
+      </li>
+
+      <% if (getUserInfo.hobby) { %>
+      <li>
+        취미 :
+        <ul>
+          <% getUserInfo.hobby.map(item => { %>
+          <li><span><%= item %></span></li>
+          <% }); %>
+        </ul>
+      </li>
+      <% } %>
+    </ul>
+    <% } %>
+
+    <br />
+
+    <% if (postUserInfo) { %>
+    <h1>resultPost</h1>
+    <ul>
+      <li>이름 : <span><%= postUserInfo.username %></span></li>
+      <li>성별 : <span><%= postUserInfo.gender %></span></li>
+      <li>
+        생일 : <span><%= postUserInfo.birthYear %></span>년
+        <span><%= postUserInfo.birthMonth %></span>월
+        <span><%= postUserInfo.birthDay %></span>일
+      </li>
+
+      <% if (postUserInfo.hobby) { %>
+      <li>
+        취미 :
+        <ul>
+          <% postUserInfo.hobby.map(item => { %>
+          <li><span><%= item %></span></li>
+          <% }); %>
+        </ul>
+      </li>
+      <% } %>
+
+      <li>색상 : <span><%= postUserInfo.color %></span></li>
+      <li>숫자 : <span><%= postUserInfo.number %></span></li>
+    </ul>
+    <% } %>
+  </body>
+</html>
