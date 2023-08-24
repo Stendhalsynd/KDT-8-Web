@@ -8,7 +8,42 @@
   </head>
   <body>
     <h1>MVC</h1>
-    <a href="/signin">로그인페이지</a>
-    <a href="/signup">회원가입페이지</a>
+    <button>
+      <a href="/signin">로그인페이지</a></button
+    ><br />
+    <button>
+      <a href="/signup">회원가입페이지</a>
+    </button>
+    <button onclick="viewProfile()" id="profile" style="display: none">
+      <span>회원정보 페이지</span>
+    </button>
   </body>
+
+  <script>
+    if (localStorage.getItem("userid")) {
+      const profile = document.querySelector("#profile");
+      profile.style = "display: block";
+    }
+
+    async function viewProfile() {
+      const userid = localStorage.getItem("userid");
+
+      try {
+        const res = await axios({
+          method: "get",
+          url: "/profile",
+          params: {
+            userid,
+          },
+        });
+        if (res.status === 200) {
+          alert("회원정보를 조회합니다.");
+          document.location.href = `/profile?userid=${userid}`;
+        }
+      } catch (error) {
+        alert("로그인 정보가 없습니다.");
+        document.location.reload();
+      }
+    }
+  </script>
 </html>

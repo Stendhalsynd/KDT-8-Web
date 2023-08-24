@@ -32,6 +32,7 @@
 
         if (res.data.result) {
           alert(`${res.data.data.name} 님 환영합니다.`);
+          localStorage.setItem("userid", res.data.data.userid);
           document.location.href = "/";
         }
       } catch (err) {

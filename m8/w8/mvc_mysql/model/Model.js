@@ -73,7 +73,31 @@ const db_signin = (data, cb) => {
   });
 };
 
+const db_profile = (data, cb) => {
+  const query = "select * from user where userid = ?";
+  conn.query(query, [data.userid], (err, rows) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    cb(rows);
+  });
+};
+
+const db_update = (data, cb) => {
+  const query = "update user set name = ? where userid = ?";
+  conn.query(query, [data.name, data.userid], (err, rows) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    cb(rows);
+  });
+};
+
 module.exports = {
   db_signup,
   db_signin,
+  db_profile,
+  db_update,
 };
