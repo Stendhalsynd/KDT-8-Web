@@ -31,14 +31,14 @@
       try {
         const res = await axios({
           method: "get",
-          url: "/profile",
-          params: {
-            userid,
-          },
+          url: `/profile/${userid}`,
+          // params: {
+          //   userid,
+          // },
         });
         if (res.status === 200) {
           alert("회원정보를 조회합니다.");
-          document.location.href = `/profile?userid=${userid}`;
+          document.location.href = `/profile/${userid}`;
         }
       } catch (error) {
         alert("로그인 정보가 없습니다.");

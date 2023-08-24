@@ -44,7 +44,9 @@ const post_signin = (req, res) => {
 
 /** 회원정보 */
 const profile = (req, res) => {
-  model.db_profile(req.query, (result) => {
+  const userid = req.params.userid;
+
+  model.db_profile({ userid }, (result) => {
     if (result.length > 0) {
       res.render("profile", { result: true, data: result[0] });
     } else {

@@ -12,7 +12,7 @@ router.get("/signin", controller.signin); // 로그인 페이지 열기
 router.post("/signin", controller.post_signin); // 데이터베이스에서 유저 정보 조회하여 로그인 진행
 
 /** 회원정보 */
-router.get("/profile", controller.profile); // 회원정보 조회
+router.get("/profile/:userid", controller.profile); // 회원정보 조회
 router.patch("/profile", controller.patch_profile); // 회원정보 수정
 
 module.exports = router;
