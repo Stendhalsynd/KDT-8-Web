@@ -24,6 +24,7 @@ app.use(
     secret: "mySessionKey", // 쿠키 서명 값
     resave: false,
     saveUninitialized: true,
+    // saveUninitialized: false,
   })
 );
 
@@ -32,7 +33,7 @@ app.use(
 //   res.send("세션 설정 완료");
 // });
 
-app.get("/default", (req, res) => {
+app.get("/", (req, res) => {
   res.render("default");
 });
 
@@ -50,6 +51,8 @@ app.get("/name", (req, res) => {
 });
 
 app.get("/destroy", (req, res) => {
+  // 쿠키는 res.clearCookie
+  // 세션은 req 를 사용
   req.session.destroy(() => {
     res.redirect("/"); // 세션 만료시 리다이렉트
   });

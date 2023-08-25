@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <style>
+      table {
+        border-spacing: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>회원 리스트</h1>
+    <p>접속자 : <%= name %></p>
+
+    <fieldset>
+      <legend>회원 리스트</legend>
+      <ul>
+        <% for(let i = 0; i < result.length; i++) { %>
+        <li><b><%= result[i].name %></b></li>
+        <% } %>
+      </ul>
+    </fieldset>
+  </body>
+</html>
