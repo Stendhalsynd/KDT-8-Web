@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>MVC</h1>
+    <button>
+      <a style="text-decoration: none" href="/signin">로그인페이지</a>
+    </button>
+    <br />
+    <button>
+      <a style="text-decoration: none" href="/signup">회원가입페이지</a>
+    </button>
+    <button id="deleteBtn" style="display: none" onclick="deleteAccount()">
+      계정 탈퇴하기
+    </button>
+  </body>
+  <script>
+    const id = localStorage.getItem("id");
+    if (id) {
+      const deleteBtn = document.getElementById("deleteBtn");
+      if (deleteBtn) {
+        deleteBtn.style.display = "block";
+      }
+    }
+
+    function deleteAccount() {
+      axios({
+        method: "delete",
+        url: `account/${id}`,
+      });
+
+      alert("계정을 삭제했습니다.");
+      localStorage.removeItem("id");
+      document.location.reload();
+    }
+  </script>
+</html>

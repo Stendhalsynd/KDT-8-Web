@@ -91,7 +91,7 @@ const db_update = (data, cb) => {
       console.error(err);
       return;
     }
-    cb(rows);
+    cb();
   });
 };
 

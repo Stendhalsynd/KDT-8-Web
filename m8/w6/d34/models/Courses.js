@@ -22,16 +22,6 @@ const CourseModel = (sequelize) => {
     teacher_name: {
       type: DataTypes.STRING(15),
     },
-    // createdAt: {
-    //   allowNull: false,
-    //   type: DataTypes.DATE,
-    //   defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
-    // },
-    // updatedAt: {
-    //   allowNull: false,
-    //   type: DataTypes.DATE,
-    //   defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
-    // },
   });
   return Course;
 };

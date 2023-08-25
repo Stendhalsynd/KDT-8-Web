@@ -56,12 +56,8 @@ const profile = (req, res) => {
 };
 
 const patch_profile = (req, res) => {
-  model.db_update(req.body, (result) => {
-    if (result.length > 0) {
-      res.json({ result: true });
-    } else {
-      res.json({ result: false });
-    }
+  model.db_update(req.body, () => {
+    res.json({ result: true });
   });
 };
 
