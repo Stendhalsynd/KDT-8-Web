@@ -15,12 +15,12 @@ app.get("/", (req, res) => {
 // 웹소켓 서버 접속
 const wss = new ws.Server({ server });
 // 브라우저(클라이언트)들을 담을 변수선언
-const sockets = [];
+// const sockets = [];
 // socket 변수는 접속한 브라우저
 wss.on("connection", (socket) => {
   console.log("클라이언트가 연결되었습니다.");
   // sockets 배열에 브라우저 추가
-  sockets.push(socket);
+  // sockets.push(socket);
 
   socket.on("message", (message) => {
     // 웹소켓을 통해 클라이언트와 서버간의 데이터를 주고받을때는 일반적으로
@@ -34,7 +34,7 @@ wss.on("connection", (socket) => {
     // socket.send(`서버메시지: ${message}`);
     const { name, msg } = JSON.parse(message);
     console.log("name, msg : ", name, msg);
-    sockets.forEach((socket) => {
+    wss.clients.forEach((socket) => {
       socket.send(`${message}`);
     });
   });
