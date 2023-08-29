@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h1>Hellow World!</h1>
+
+    <form id="btn">
+      <button id="helloBtn">hello</button>
+      <button id="studyBtn">study</button>
+      <button id="byeBtn">bye</button>
+    </form>
+    <br />
+    <div></div>
+
+    <script>
+      const chatForm = document.querySelector("#btn");
+      const helloBtn = document.querySelector("#helloBtn");
+      const studyBtn = document.querySelector("#studyBtn");
+      const byeBtn = document.querySelector("#byeBtn");
+      const div = document.querySelector("div");
+      // io()가 클라이언트 소켓 생성 및 연결 설정
+      const socket = io();
+
+      helloBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        socket.emit("message", "hello", () => {
+          div.textContent = "hello : 안녕하세요";
+        });
+      });
+
+      studyBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        socket.emit("message", "study", () => {
+          div.textContent = "hello : 공부합시다";
+        });
+      });
+
+      byeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        socket.emit("message", "bye", () => {
+          div.textContent = "hello : 잘 가~";
+        });
+      });
+    </script>
+  </body>
+</html>
