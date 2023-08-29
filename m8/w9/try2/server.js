@@ -1,6 +1,6 @@
 const http = require("http");
 const express = require("express");
-const { Server } = require("../try2/node_modules/socket.io/dist");
+const { Server } = require("socket.io");
 
 const app = express();
 const PORT = 8000;
@@ -41,7 +41,7 @@ io.on("connection", (socket) => {
 
   socket.on("message", (message) => {
     // io.to(특정방).emit(이벤트): 특정방에 전체 사용자에게 메시지 전달
-    io.to(socket.room).emit("chat", `${socket.name}: ${message}`);
+    io.to(socket.room).emit("chat", { name: socket.name, message });
   });
 
   // [실습1번]
