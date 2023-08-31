@@ -17,6 +17,7 @@
   },
   "description": "",
   "devDependencies": {
+    "@socket.io/admin-ui": "^0.5.1",
     "@vitest/ui": "^0.34.3",
     "vitest": "^0.34.3"
   }

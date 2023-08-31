@@ -1,13 +1,24 @@
 const http = require("http");
 const express = require("express");
-const SocketIO = require("socket.io");
+const { Server } = require("socket.io");
 const { lstat } = require("fs");
+const { instrument } = require("@socket.io/admin-ui");
 
 const PORT = 8000;
 const app = express();
 
 const server = http.createServer(app);
-const io = SocketIO(server);
+const io = new Server(server, {
+  cors: {
+    origin: ["https://admin.socket.io"],
+    credentials: true,
+  },
+});
+
+instrument(io, {
+  auth: false,
+  mode: "development",
+});
 
 app.set("view engine", "ejs");
 
