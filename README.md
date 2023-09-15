@@ -9,9 +9,9 @@
 
 ## 🐣 HTML, CSS, JavaScript
 
-> 2023.07.04 ~ 2023.15
+> 2023.07.04 ~ 2023.07.15
 
-## 💅 Team Project - 화장품 추천 사이트
+## 💅 Team Project `Beauty LAB` - 화장품 추천 사이트
 
 > 2023.07.17 ~ 2023.07.23
 
@@ -37,7 +37,7 @@
 
 ## 🐥 Backend
 
-> 2023.07.26 ~
+> 2023.07.26 ~ 08.30
 
 ### 학습내용
 
@@ -45,16 +45,64 @@
 - express
 - Database
 - MVC
-- Sequelize
+- Orm, Sequelize
 - Naver Cloud Platform & AWS 배포
+- EC2, RDS, S3
+- Apache, Nginx
+- WebSocket, Socket.io
 
 ### 스터디 - React 스터디
 
 매주 리액트에 대한 자유 주제로 2개 이상 블로그 작성을 하는 스터디 모임
 
-> 2023.08.05 ~
+> 2023.08.05 ~ 08.30
 
 https://github.com/Stendhalsynd/react-study
+
+## 💅 Team Project `Do IT` - 개발자를 위한 스터디 모집 플랫폼
+
+> 2023.08.31 ~ 2023.09.14
+
+### 목표
+
+- 좀더 협업다운 협업을 해보자.
+  - 스크럼과 스프린트 회고
+  - [요구사항 명세서 노션 정리](https://www.notion.so/5e56b9f5ca454421ab02b5b2006e66bd?pvs=4)
+  - git 과 rebase
+  - code review
+  - MVP (Minimum Viable Product) 최소 실행 가능 제품
+- 검증된 인원들로 스터디를 모집하거나 개설할 수 있다.
+- 프롬프트 엔지니어링을 통해 CS 면접 연습을 ChatGPT 를 면접관으로 배정하여 진행할 수 있다.
+- 스터디 개설 알림을 Slack 의 SocketMode 를 통해 slack 으로 notification 을 받을 수 있으며 WebHook 기능을 통해 slack 에 전송된 메세지에 담긴 수락 / 거절 버튼을 눌러 서버에 커스텀 콜백을 실행시킬 수 있다.
+- 마우스 움직임을 트래킹하여 인터렉티브한 애니메이션을 줄 수 있다.
+- sequelize 를 통해 orm 을 구현한다.
+- sass 를 깊게 활용할 수 있다.
+  - mixin - include
+    - figma typograhpy 를 mixin 으로 저장해두고 각 css 에서 불러와 사용하는 방식
+
+### 프로젝트 기록
+
+| 레포지토리                                               | 블로그 정리글                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Do IT](https://github.com/dawncoding/Do-IT) | [1탄 slackbot 도입을 위한 조사](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Do-IT-%ED%9A%8C%EA%B3%A01) <br> [2탄 프로젝트 회고](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Do-IT-%EC%B4%9D%ED%9A%8C%EA%B3%A0) <br> [3탄 slackbot 도입기 정리](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Do-IT-%EC%8A%AC%EB%9E%99%EB%B4%87-%EC%A0%84%EC%B2%B4-%EC%83%9D%EC%84%B1%EA%B3%BC%EC%A0%95)|
+
+### 프로젝트 피그마 디자인
+
+<img src="https://velog.velcdn.com/images/qmflf556/post/9b48ff02-7bcb-45d6-aa9f-48c41317845a/image.png">
+
+[피그마 디자인 바로보기](https://www.figma.com/file/5qcxByT9Hzdxf3vDC9tXeo/Do-IT?type=design&node-id=0%3A1&mode=design&t=mGKIwH5MbULg2URZ-1)
+
+### 발표 관련 자료
+
+- [구글 슬라이드](https://docs.google.com/presentation/d/1xhVMr-46AZJJ4oCyhcoH1-PRfUZg3ZswrbAo0IFRllM/edit?usp=sharing)
+- [miro db 설계 및 work flow](https://miro.com/app/board/uXjVMp1UPIw=/?share_link_id=141935779765)
+
+#### 멤버
+
+| <a href="https://github.com/dawncoding"><img src="https://velog.velcdn.com/images/qmflf556/post/23b29140-1247-43f6-a393-6ddaf7a65371/image.png" width="150px"/></a> | <a href="https://github.com/Stendhalsynd"><img src="https://velog.velcdn.com/images/qmflf556/post/19704a5b-0640-4675-b149-abb432c38cd2/image.png" width="150px"/></a> | <a href="https://github.com/best0611"><img src="https://velog.velcdn.com/images/qmflf556/post/a74908d9-a0e1-4db8-a392-a6a895f20c0c/image.png" width="150px"/></a> | <a href="[https://github.com/JSHWJ](https://github.com/syxxne)"><img src="https://velog.velcdn.com/images/qmflf556/post/3af59869-3853-4ed5-9553-2b4a1627ce27/image.png" width="150px"/></a> |
+| --- | --- | --- | --- |
+| dawncoding | Stendhalsynd | best0611 | syxxne |
+| 메인 페이지 <br> 로그인, 회원가입, 로그아웃 기능 구현 <br> 스크롤 인터렉션 <br> 서버 배포 | 피그마 디자인 <br> 웹 로그인, 회원가입 애니메이션 <br> 스터디 개설 - slackbot <br> 스터디 상세페이지 | 스터디 리스트 페이지 <br> 스터디 개설 페이지 <br> 마이페이지 | 면접 연습 페이지 <br> 모바일 로그인, 회원가입 css <br> 버튼 클릭 애니메이션 |
 
 ## ✏️ 블로깅 기록
 
@@ -97,7 +145,7 @@ https://github.com/Stendhalsynd/react-study
 | 35 | [9주차 회고1 - TCP/IP Deep Dive](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-9%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A01-TCPIP-Deep-Dive) | `TCP/IP` | ![](https://img.shields.io/static/v1?label=&message=basic&color=skyblue) |
 | 36 | [9주차 회고2 - WebSocket](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-9%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A02-WebSocket) | `WebSocket` | ![](https://img.shields.io/static/v1?label=&message=basic&color=skyblue) |
 | 37 | [useReducer 이해하기](https://velog.io/@qmflf556/React-%EC%8A%A4%ED%84%B0%EB%94%94-5%EC%A3%BC%EC%B0%A8-global-state-useReducer) | `useReducer` | ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen) |
-| 38 | [9주차 회고3 Socket.IO](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-9%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A03-Socket.IO) | `Socket.IO` | ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen) |
+| 38 | [9주차 회고3 Socket.IO](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-9%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A03-Socket.IO) | `Socket.IO` | ![](https://img.shields.io/static/v1?label=&message=basic&color=skyblue) |
 | 39 | [팀프로젝트 Do-IT 회고1](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Do-IT-%ED%9A%8C%EA%B3%A01) | `slackbot`, `webhook` | ![](https://img.shields.io/static/v1?label=&message=project&color=gray) |
-| 40 | [팀프로젝트 Do-IT 총 회고](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Do-IT-%EC%B4%9D%ED%9A%8C%EA%B3%A0) | `project` | ![](https://img.shields.io/static/v1?label=&message=project&color=gray) |
-| 41 | [팀프로젝트 Do-IT 슬랙봇 생성기](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Do-IT-%EC%8A%AC%EB%9E%99%EB%B4%87-%EC%A0%84%EC%B2%B4-%EC%83%9D%EC%84%B1%EA%B3%BC%EC%A0%95) | `project` | ![](https://img.shields.io/static/v1?label=&message=project&color=gray) |
+| 40 | [팀프로젝트 Do-IT 총 회고](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Do-IT-%EC%B4%9D%ED%9A%8C%EA%B3%A0) | `project`, `webhook`, `scss`, `OpenAI`, `slack`, `bolt.js` | ![](https://img.shields.io/static/v1?label=&message=project&color=gray) |
+| 41 | [팀프로젝트 Do-IT 슬랙봇 생성기](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-Do-IT-%EC%8A%AC%EB%9E%99%EB%B4%87-%EC%A0%84%EC%B2%B4-%EC%83%9D%EC%84%B1%EA%B3%BC%EC%A0%95) | `slackbot` | ![](https://img.shields.io/static/v1?label=&message=project&color=gray) |
