@@ -102,7 +102,7 @@ https://github.com/Stendhalsynd/react-study
 | <a href="https://github.com/dawncoding"><img src="https://velog.velcdn.com/images/qmflf556/post/23b29140-1247-43f6-a393-6ddaf7a65371/image.png" width="150px"/></a> | <a href="https://github.com/Stendhalsynd"><img src="https://velog.velcdn.com/images/qmflf556/post/19704a5b-0640-4675-b149-abb432c38cd2/image.png" width="150px"/></a> | <a href="https://github.com/best0611"><img src="https://velog.velcdn.com/images/qmflf556/post/a74908d9-a0e1-4db8-a392-a6a895f20c0c/image.png" width="150px"/></a> | <a href="[https://github.com/JSHWJ](https://github.com/syxxne)"><img src="https://velog.velcdn.com/images/qmflf556/post/3af59869-3853-4ed5-9553-2b4a1627ce27/image.png" width="150px"/></a> |
 | --- | --- | --- | --- |
 | dawncoding | Stendhalsynd | best0611 | syxxne |
-| 메인 페이지 <br> 로그인, 회원가입, 로그아웃 기능 구현 <br> 스크롤 인터렉션 <br> 서버 배포 | 피그마 디자인 <br> 웹 로그인, 회원가입 애니메이션 <br> 스터디 개설 - slackbot <br> 스터디 상세페이지 | 스터디 리스트 페이지 <br> 스터디 개설 페이지 <br> 마이페이지 | 면접 연습 페이지 <br> 모바일 로그인, 회원가입 css <br> 버튼 클릭 애니메이션 |
+| 메인 페이지 <br> 로그인, 회원가입, 로그아웃 기능 구현 <br> 스크롤 인터렉션 <br> 서버 배포 | 피그마 디자인 <br> 웹 로그인, 회원가입 애니메이션 <br> 스터디 개설 - slackbot <br> 스터디 상세페이지 | 스터디 리스트 페이지 <br> 스터디 개설 페이지 <br> 마이페이지 | 면접 연습 페이지 - OpenAI API <br> 모바일 로그인, 회원가입 css <br> 버튼 클릭 애니메이션 |
 
 ## ✏️ 블로깅 기록
 
