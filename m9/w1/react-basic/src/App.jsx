@@ -50,11 +50,11 @@ function App() {
       <TestComponent />
       <Test2Component /> */}
 
-      {/* <Event></Event>
-      <EventClass /> */}
+      {/* <Event></Event> */}
+      <EventClass />
       {/* <EventClassHW message="전달할 메세지" /> */}
       {/* <Counter /> */}
-      <Text />
+      {/* <Text /> */}
     </>
   );
 }
