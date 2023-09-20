@@ -7,6 +7,11 @@ import TestComponent from "./test";
 import Test2Component from "./test2";
 import ClassComponent2 from "./ClassComponent2";
 import FunctionComponent2 from "./FunctionComponent2";
+import Event from "./Event";
+import EventClass from "./EventClass";
+import EventClassHW from "./EventClassHW";
+import Counter from "./Counter";
+import Text from "./Text";
 
 function App() {
   return (
@@ -15,14 +20,14 @@ function App() {
       <ClassComponent /> */}
       {/* <ClassComponent name="홍지훈" /> */}
       {/* <ClassComponent2></ClassComponent2> */}
-      <FunctionComponent2
+      {/* <FunctionComponent2
         title="나의 하루는 4시 40분에 시작된다"
         author="김유진"
         price="13,500"
         type="자기계발서"
       >
         이번주 베스트셀러
-      </FunctionComponent2>
+      </FunctionComponent2> */}
       {/* <FunctionComponent name="kdt8" age={12}>
         안녕하세요 */}
       {/* </FunctionComponent> */}
@@ -44,6 +49,12 @@ function App() {
 
       <TestComponent />
       <Test2Component /> */}
+
+      {/* <Event></Event>
+      <EventClass /> */}
+      {/* <EventClassHW message="전달할 메세지" /> */}
+      {/* <Counter /> */}
+      <Text />
     </>
   );
 }

@@ -86,3 +86,10 @@
     transform: rotate(360deg);
   }
 }
+
+td,
+th {
+  border: 2px solid black;
+  padding: 16px 24px;
+  text-align: center;
+}
