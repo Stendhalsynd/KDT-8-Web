@@ -120,7 +120,6 @@ export default class Text extends Component {
         <div style={{ display: "flex" }}>
           <Box>
             <select
-              name="year"
               value={searchCondition}
               onChange={this.handleSearchConditionChange}
             >

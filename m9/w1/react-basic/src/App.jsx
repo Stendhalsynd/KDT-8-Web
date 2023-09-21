@@ -12,6 +12,7 @@ import EventClass from "./EventClass";
 import EventClassHW from "./EventClassHW";
 import Counter from "./Counter";
 import Text from "./Text";
+import Text3 from "./Test3";
 
 function App() {
   return (
@@ -51,10 +52,11 @@ function App() {
       <Test2Component /> */}
 
       {/* <Event></Event> */}
-      <EventClass />
+      {/* <EventClass /> */}
       {/* <EventClassHW message="전달할 메세지" /> */}
       {/* <Counter /> */}
       {/* <Text /> */}
+      <Text3 />
     </>
   );
 }
