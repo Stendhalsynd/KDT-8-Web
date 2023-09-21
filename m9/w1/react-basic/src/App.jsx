@@ -13,6 +13,12 @@ import EventClassHW from "./EventClassHW";
 import Counter from "./Counter";
 import Text from "./Text";
 import Text3 from "./Test3";
+import FunctionCounter from "./FunctionCounter";
+import FunctionToggle from "./FunctionToggle";
+import FunctionText from "./FunctionText";
+import FunctionDisappear from "./FunctionDisappear";
+import FunctionComment from "./FunctionComment";
+import FunctionTodo from "./FunctionTodo";
 
 function App() {
   return (
@@ -56,7 +62,13 @@ function App() {
       {/* <EventClassHW message="전달할 메세지" /> */}
       {/* <Counter /> */}
       {/* <Text /> */}
-      <Text3 />
+      {/* <Text3 /> */}
+      {/* <FunctionCounter /> */}
+      {/* <FunctionToggle /> */}
+      {/* <FunctionText /> */}
+      {/* <FunctionDisappear /> */}
+      {/* <FunctionComment /> */}
+      <FunctionTodo />
     </>
   );
 }
