@@ -153,3 +153,4 @@ https://github.com/Stendhalsynd/react-study
 | 43 | [redux 입문](https://velog.io/@qmflf556/React-%EC%8A%A4%ED%84%B0%EB%94%94-6%EC%A3%BC%EC%B0%A8-redux-%EC%9E%85%EB%AC%B8) | `redux` | ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen) |
 | 44 | [atomic design](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-11%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A01-atomic-design) | `atomic design` | ![](https://img.shields.io/static/v1?label=&message=basic&color=skyblue) |
 | 45 | [this](https://velog.io/@qmflf556/this) | `this` | ![](https://img.shields.io/static/v1?label=&message=basic&color=skyblue) |
+| 46 | [redux 용어 이해하기](https://velog.io/@qmflf556/React-%EC%8A%A4%ED%84%B0%EB%94%94-6%EC%A3%BC%EC%B0%A8-redux-%EC%9A%A9%EC%96%B4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0) | `redux` | ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen) |
