@@ -19,6 +19,7 @@ import FunctionText from "./FunctionText";
 import FunctionDisappear from "./FunctionDisappear";
 import FunctionComment from "./FunctionComment";
 import FunctionTodo from "./FunctionTodo";
+import UseStateTodo from "./UseStateTodo";
 
 function App() {
   return (
@@ -68,7 +69,8 @@ function App() {
       {/* <FunctionText /> */}
       {/* <FunctionDisappear /> */}
       {/* <FunctionComment /> */}
-      <FunctionTodo />
+      {/* <FunctionTodo /> */}
+      <UseStateTodo />
     </>
   );
 }

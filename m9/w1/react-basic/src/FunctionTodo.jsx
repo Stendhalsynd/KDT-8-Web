@@ -30,17 +30,17 @@ export default function FunctionTodo() {
 
   return (
     <>
-      <form>
-        <input
-          type="text"
-          placeholder="할 일 입력..."
-          value={todo}
-          onChange={handleTodo}
-        />
-        <button type="button" onClick={addTodo}>
-          추가
-        </button>
-      </form>
+      {/* <form> */}
+      <input
+        type="text"
+        placeholder="할 일 입력..."
+        value={todo}
+        onChange={handleTodo}
+      />
+      <button type="button" onClick={addTodo}>
+        추가
+      </button>
+      {/* </form> */}
       <br />
       <ul>
         {list.map((item, index) => (
