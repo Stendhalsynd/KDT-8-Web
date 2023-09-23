@@ -5,9 +5,6 @@ const initialState = {
     { id: 0, text: "Learn React", completed: true },
     { id: 1, text: "Learn Redux", completed: false },
   ],
-  filters: {
-    status: "All",
-  },
 };
 
 // Create a utility function to generate the next todo ID

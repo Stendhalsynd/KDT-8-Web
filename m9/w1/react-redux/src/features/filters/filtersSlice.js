@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export const StatusFilters = {
+  All: "all",
+  Active: "active",
+  Completed: "completed",
+};
+
 const initialState = {
-  todos: [
-    { id: 0, text: "Learn React", completed: true },
-    { id: 1, text: "Learn Redux", completed: false },
-  ],
-  filters: {
-    status: "All",
-  },
+  status: StatusFilters.All,
 };
 
 // Create a utility function to generate the next todo ID
@@ -20,25 +20,9 @@ export const filtersSlice = createSlice({
   name: "filters",
   initialState,
   reducers: {
-    todoAdded: (state, action) => {
-      state.todos.push({
-        id: nextTodoId(state.todos),
-        text: action.payload,
-        completed: false,
-      });
+    statusFilterChanged: (state, action) => {
+      state.status = action.payload;
     },
-    todoToggled: (state, action) => {
-      const toggledTodo = state.todos.find(
-        (todo) => todo.id === action.payload
-      );
-      if (toggledTodo) {
-        toggledTodo.completed = !toggledTodo.completed;
-      }
-    },
-    todoDeleted: () => {},
-    allCompleted: () => {},
-    completedCleared: () => {},
-    statusFilterChanged: () => {},
   },
 });
 
