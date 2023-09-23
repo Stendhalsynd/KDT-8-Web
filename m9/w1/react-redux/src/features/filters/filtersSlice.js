@@ -10,12 +10,6 @@ const initialState = {
   status: StatusFilters.All,
 };
 
-// Create a utility function to generate the next todo ID
-function nextTodoId(todos) {
-  const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);
-  return maxId + 1;
-}
-
 export const filtersSlice = createSlice({
   name: "filters",
   initialState,
@@ -25,6 +19,8 @@ export const filtersSlice = createSlice({
     },
   },
 });
+
+export const filterStatus = (state) => state.filters.status;
 
 export const { statusFilterChanged } = filtersSlice.actions;
 

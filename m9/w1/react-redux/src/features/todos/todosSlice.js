@@ -32,7 +32,7 @@ export const todosSlice = createSlice({
         toggledTodo.completed = !toggledTodo.completed;
       }
     },
-    allDeleted: (state, action) => {
+    todoDeleted: (state, action) => {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
     },
     allCompleted: (state) => {
@@ -49,6 +49,11 @@ export const todosSlice = createSlice({
 
 export const maxId = (todos) =>
   todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1;
+
+export const todos = (state) => state.todos;
+
+export const completedTodos = (state) =>
+  state.todos.filter((todo) => todo.completed === true);
 
 export const {
   todoAdded,
