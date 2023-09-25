@@ -6,6 +6,7 @@
 ![](https://img.shields.io/static/v1?label=&message=basic&color=skyblue)
 ![](https://img.shields.io/static/v1?label=&message=TDD&color=purple)
 ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen)
+![](https://img.shields.io/static/v1?label=&message=book&color=salmon)
 
 ## 🐣 HTML, CSS, JavaScript
 
@@ -157,3 +158,6 @@ https://github.com/Stendhalsynd/react-study
 | 47 | [state, action, reducer 생성하기](https://velog.io/@qmflf556/React-%EC%8A%A4%ED%84%B0%EB%94%94-6%EC%A3%BC%EC%B0%A8-redux-todo-%EC%95%B1) | `redux` | ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen) |
 | 48 | [redux 로 todo 앱 만들기](https://velog.io/@qmflf556/redux-todo) | `redux` | ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen) |
 | 49 | [redux 로 modal 만들기](https://velog.io/@qmflf556/Redux-Modal-%EB%A7%8C%EB%93%A4%EA%B8%B0) | `redux` | ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen) |
+| 50 | [쏙쏙 들어오는 함수형 코딩 CH1](https://velog.io/@qmflf556/%EC%8F%99%EC%8F%99-%EB%93%A4%EC%96%B4%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%BD%94%EB%94%A9-CH1) | `functional programing` | ![](https://img.shields.io/static/v1?label=&message=book&color=salmon) |
+| 51 | [쏙쏙 들어오는 함수형 코딩 CH2](https://velog.io/@qmflf556/%EC%8F%99%EC%8F%99-%EB%93%A4%EC%96%B4%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%BD%94%EB%94%A9-CH1) | `functional programing`, `HOF` | ![](https://img.shields.io/static/v1?label=&message=book&color=salmon) |
+| 52 | [쏙쏙 들어오는 함수형 코딩 CH3](https://velog.io/@qmflf556/%EC%8F%99%EC%8F%99-%EB%93%A4%EC%96%B4%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%BD%94%EB%94%A9-CH1) | `functional programing`, `액션/계산/데이터` | ![](https://img.shields.io/static/v1?label=&message=book&color=salmon) |
