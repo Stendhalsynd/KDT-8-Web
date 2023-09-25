@@ -1,0 +1,32 @@
+@import "./_utils.scss";
+
+.SassComponent {
+  display: flex;
+  .box {
+    // width: 100px;
+    // height: 100px;
+    @include box(100px);
+
+    &.red {
+      background-color: $color-red;
+    }
+    &.orange {
+      background-color: $color-orange;
+    }
+    &.yellow {
+      background-color: $color-yellow;
+    }
+    &.green {
+      background-color: $color-green;
+    }
+    &.blue {
+      background-color: $color-blue;
+    }
+    &.navy {
+      background-color: $color-navy;
+    }
+    &.purple {
+      background-color: $color-purple;
+    }
+  }
+}

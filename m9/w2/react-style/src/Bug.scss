@@ -1,0 +1,53 @@
+@import "./_utils.scss";
+
+.white {
+  @include circle(50px);
+  background-color: white;
+  top: 20px;
+}
+
+.black {
+  @include circle(25px);
+  background-color: black;
+  top: 30px;
+}
+
+.circle {
+  @include circle(100px);
+
+  &.circle1 {
+    background-color: skyblue;
+    left: 30px;
+    z-index: 1;
+  }
+  &.circle2 {
+    background-color: rgb(134, 134, 250);
+    left: 80px;
+    top: 50px;
+    z-index: 2;
+  }
+  &.circle3 {
+    background-color: rgb(2, 44, 61);
+    left: 120px;
+    top: 70px;
+    z-index: 3;
+  }
+  &.circle4 {
+    background-color: rgb(15, 58, 75);
+    left: 150px;
+    top: 80px;
+    z-index: 4;
+  }
+  &.circle5 {
+    background-color: rgb(61, 27, 162);
+    left: 190px;
+    top: 70px;
+    z-index: 6;
+  }
+}
+.grass {
+  position: absolute;
+  left: 30px;
+  top: 100px;
+  z-index: 5;
+}

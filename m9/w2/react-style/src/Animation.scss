@@ -1,0 +1,46 @@
+@import "./_utils.scss";
+
+@mixin moveClockAnimation($animationName, $translationX, $translationY) {
+  animation: #{$animationName} 4s linear infinite;
+
+  @keyframes #{$animationName} {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    25% {
+      transform: translateX(#{$translationX});
+    }
+    50% {
+      transform: translate(#{$translationX}, #{$translationY});
+    }
+    75% {
+      transform: translate(0px, #{$translationY});
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.round {
+  @include circle(50px);
+  position: relative;
+
+  &.pink {
+    background-color: $color-pink;
+    @include moveClockAnimation("pink", 30px, 30px);
+  }
+  &.yellow {
+    background-color: $color-yellow;
+    @include moveClockAnimation("yellow", 60px, 60px);
+  }
+  &.green {
+    background-color: $color-green;
+    @include moveClockAnimation("green", 90px, 90px);
+  }
+}
