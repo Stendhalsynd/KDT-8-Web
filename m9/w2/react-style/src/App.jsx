@@ -2,6 +2,9 @@ import Style from "./Style";
 import SassComponent from "./SassComponent";
 import Bug from "./Bug";
 import Animation from "./Animation";
+import StyledComponents from "./StyledComponent";
+import Test from "./Test";
+import Test2 from "./Test2";
 
 function App() {
   return (
@@ -9,7 +12,10 @@ function App() {
       {/* <Style /> */}
       {/* <SassComponent /> */}
       {/* <Bug /> */}
-      <Animation />
+      {/* <Animation /> */}
+      {/* <StyledComponents /> */}
+      {/* <Test /> */}
+      <Test2 />
     </div>
   );
 }
