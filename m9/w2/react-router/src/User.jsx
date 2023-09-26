@@ -34,7 +34,7 @@ export default function User() {
   // searchParams 는 쿼리스트링 값을 가져오는 것
   // setSearchParams 는 쿼리스트링 값을 할당하는 것
   const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams.get("mode"));
+
   // setTimeout(() => {
   //   setSearchParams({ mode: "dark" });
   // }, 3000);

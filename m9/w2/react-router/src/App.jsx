@@ -1,9 +1,15 @@
-import Router from "./Router";
+import { Outlet } from "react-router-dom";
+import Header from "./Header";
+// import Router from "./Router";
 
 function App() {
   return (
     <>
-      <Router />
+      {/* ver 2 */}
+      <Header />
+      <Outlet />
+      {/* ver 1 */}
+      {/* <Router /> */}
     </>
   );
 }
