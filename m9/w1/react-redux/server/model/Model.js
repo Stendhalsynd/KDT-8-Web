@@ -37,9 +37,9 @@ const db_postTodo = (data, cb) => {
 };
 
 const db_update = (data, cb) => {
-  const query = "update todo set title = ? where id = ?";
+  const query = "update todo set title = ?, done= ? where id = ?";
 
-  conn.query(query, [data.title, data.id], (err, result) => {
+  conn.query(query, [data.title, data.done, data.id], (err, result) => {
     if (err) {
       console.error(err);
       return;

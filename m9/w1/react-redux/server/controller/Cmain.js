@@ -14,9 +14,9 @@ const postTodo = (req, res) => {
 
 const patchTodo = (req, res) => {
   const id = req.params.todoId;
-  const title = req.body.title;
+  const { title, done } = req.body;
 
-  model.db_update({ id, title }, () => {
+  model.db_update({ id, title, done }, () => {
     res.json({ result: true });
   });
 };

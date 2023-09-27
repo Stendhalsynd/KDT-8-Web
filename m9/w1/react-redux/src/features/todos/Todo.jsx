@@ -1,25 +1,57 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   todoAdded,
   todoToggled,
   todoDeleted,
   allCompleted,
   completedCleared,
-  todoEdited,
   todos,
+  fetchTodos,
+  editTodo,
 } from "./todosSlice";
 import {
   statusFilterChanged,
   filterStatus,
   StatusFilters,
 } from "../filters/filtersSlice";
+import styled from "styled-components";
+
+const InputStyle = styled.input`
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+`;
+
+const titleStyle = {
+  padding: "15px",
+  background: "antiquewhite",
+  fontWeight: "bold",
+  fontSize: "x-large",
+};
+
+const itemContainerStyle = {
+  display: "grid",
+  gridTemplateColumns: "1fr 14fr 1fr",
+  padding: "10px 0",
+};
+
+const footerContainerStyle = {
+  display: "flex",
+  justifyContent: "space-between",
+  padding: "10px",
+  borderBottom: "0.5px solid black",
+};
 
 export function Todo() {
   const dispatch = useDispatch();
   const todoList = useSelector(todos).todos;
   const currentStatus = useSelector(filterStatus);
   const [textInput, setTextInput] = useState("");
+
+  useEffect(() => {
+    dispatch(fetchTodos());
+  }, [dispatch]);
 
   const resultTodos = (currentStatus) => {
     switch (currentStatus) {
@@ -32,24 +64,13 @@ export function Todo() {
     }
   };
 
-  const titleStyle = {
-    padding: "15px",
-    background: "antiquewhite",
-    fontWeight: "bold",
-    fontSize: "x-large",
-  };
-
-  const itemContainerStyle = {
-    display: "grid",
-    gridTemplateColumns: "1fr 14fr 1fr",
-    padding: "10px 0",
-  };
-
-  const footerContainerStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "10px",
-    borderBottom: "0.5px solid black",
+  const handleTodoEdit = async (todoId, newText) => {
+    try {
+      await dispatch(editTodo({ todoId, newText }));
+    } catch (error) {
+      // Handle any errors that may occur during todo editing
+      console.error("Error editing todo:", error);
+    }
   };
 
   return (
@@ -73,6 +94,7 @@ export function Todo() {
           onClick={() => {
             dispatch(todoAdded(textInput));
             setTextInput("");
+            dispatch(fetchTodos());
           }}
         >
           add
@@ -88,12 +110,12 @@ export function Todo() {
               id={todo.id}
             />
             <label htmlFor={todo.id} style={{ padding: "5px" }}>
-              <input
+              <InputStyle
                 type="text"
                 value={todo.text}
-                onChange={(e) =>
-                  dispatch(todoEdited({ id: todo.id, newText: e.target.value }))
-                }
+                onChange={(e) => {
+                  handleTodoEdit(todo.id, e.target.value);
+                }}
               />
             </label>
             <button onClick={() => dispatch(todoDeleted(todo.id))}>x</button>
