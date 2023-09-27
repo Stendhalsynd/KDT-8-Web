@@ -1,18 +1,37 @@
-const Users = require("../model/Model");
+const model = require("../model/Model");
 
-exports.main = (req, res) => {
-  res.render("index", { users: Users });
+const getTodos = (req, res) => {
+  model.db_getTodos(undefined, (result) => {
+    res.json(result);
+  });
 };
 
-exports.register = (req, res) => {
-  const { name, gender, major } = req.body;
-  console.log("name, gender, major : ", name, gender, major);
-  Users.push({
-    id: Users.length + 1,
-    name,
-    gender,
-    major,
+const postTodo = (req, res) => {
+  model.db_postTodo(req.body, () => {
+    res.json({ result: true });
   });
-  console.log(Users);
-  res.send(Users);
+};
+
+const patchTodo = (req, res) => {
+  const id = req.params.todoId;
+  const title = req.body.title;
+
+  model.db_update({ id, title }, () => {
+    res.json({ result: true });
+  });
+};
+
+const deleteTodo = (req, res) => {
+  const id = req.params.todoId;
+
+  model.db_delete({ id }, () => {
+    res.json({ result: true });
+  });
+};
+
+module.exports = {
+  getTodos,
+  postTodo,
+  patchTodo,
+  deleteTodo,
 };

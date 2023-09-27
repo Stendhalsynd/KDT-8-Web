@@ -1,9 +1,11 @@
 import Form from "./Form";
+import Form2 from "./Form2";
 
 function App() {
   return (
     <>
-      <Form />
+      {/* <Form /> */}
+      <Form2 />
     </>
   );
 }

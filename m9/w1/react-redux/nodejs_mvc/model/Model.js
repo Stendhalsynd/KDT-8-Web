@@ -3,9 +3,9 @@ const mysql = require("mysql");
 //mysql연결
 const conn = mysql.createConnection({
   host: "localhost",
-  user: "kdt",
-  password: "",
-  database: "kdt",
+  user: "root",
+  password: "root1234",
+  database: "mini",
   port: 3306,
 });
 
@@ -14,37 +14,55 @@ conn.connect(function (err) {
   console.log("connected!");
 });
 
-// const users = [
-//   {
-//     id: 1,
-//     name: "이름1",
-//     gender: "여",
-//     major: "기계공학",
-//   },
-//   {
-//     id: 2,
-//     name: "이름2",
-//     gender: "여",
-//     major: "전기공학",
-//   },
-//   {
-//     id: 3,
-//     name: "이름3",
-//     gender: "남",
-//     major: "컴퓨터공학",
-//   },
-//   {
-//     id: 4,
-//     name: "이름4",
-//     gender: "여",
-//     major: "기계공학",
-//   },
-//   {
-//     id: 5,
-//     name: "이름5",
-//     gender: "남",
-//     major: "생명공학",
-//   },
-// ];
+const db_getTodos = (data, cb) => {
+  const query = "select * from todo";
+  conn.query(query, (err, result) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    cb(result);
+  });
+};
 
-// module.exports = users;
+const db_postTodo = (data, cb) => {
+  const query = "insert into todo (title, done) values (?, ?)";
+  conn.query(query, [data.title, data.done], (err, result) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    cb();
+  });
+};
+
+const db_update = (data, cb) => {
+  const query = "update todo set title = ? where id = ?";
+
+  conn.query(query, [data.title, data.id], (err, result) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    cb();
+  });
+};
+
+const db_delete = (data, cb) => {
+  const query = "delete from todo where id = ?";
+
+  conn.query(query, [data.id], (err, result) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    cb();
+  });
+};
+
+module.exports = {
+  db_getTodos,
+  db_postTodo,
+  db_update,
+  db_delete,
+};
