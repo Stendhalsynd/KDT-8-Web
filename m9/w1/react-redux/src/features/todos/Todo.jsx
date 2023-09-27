@@ -111,17 +111,21 @@ export function Todo() {
                   setTodoInput(todo.text);
                 }}
                 onChange={(e) => setTodoInput(e.target.value)}
-                onBlur={() => {
-                  dispatch(
-                    editTodo({
-                      id: todo.id,
-                      newText: todoInput,
-                      completed: todo.completed,
-                    })
-                  );
-                  dispatch(fetchTodos());
-                  setEditingTodoId(null);
-                  setTodoInput("");
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    dispatch(
+                      editTodo({
+                        id: todo.id,
+                        newText: todoInput,
+                        completed: todo.completed,
+                      })
+                    );
+                    dispatch(fetchTodos());
+                    setEditingTodoId(null);
+                    setTodoInput("");
+
+                    e.target.blur();
+                  }
                 }}
               />
             </label>
