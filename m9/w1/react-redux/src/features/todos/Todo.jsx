@@ -64,14 +64,7 @@ export function Todo() {
     }
   };
 
-  const handleTodoEdit = async (todoId, newText) => {
-    try {
-      await dispatch(editTodo({ todoId, newText }));
-    } catch (error) {
-      // Handle any errors that may occur during todo editing
-      console.error("Error editing todo:", error);
-    }
-  };
+  console.log(resultTodos());
 
   return (
     <>
@@ -114,7 +107,15 @@ export function Todo() {
                 type="text"
                 value={todo.text}
                 onChange={(e) => {
-                  handleTodoEdit(todo.id, e.target.value);
+                  console.log("실행");
+                  dispatch(
+                    editTodo({
+                      id: todo.id,
+                      newText: e.target.value,
+                      completed: todo.completed,
+                    })
+                  );
+                  dispatch(fetchTodos());
                 }}
               />
             </label>

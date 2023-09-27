@@ -58,12 +58,33 @@ export const todoAdded = createAsyncThunk(
 
 export const editTodo = createAsyncThunk(
   "todos/editTodo",
-  async ({ todoId, newText }) => {
+  async ({ id, newText, completed }, { dispatch, getState }) => {
+    const currentState = getState();
+    const isDone = currentState.todos.todos.find(
+      (todo) => todo.id === id
+    ).completed;
+
     try {
-      await axios.patch(`http://localhost:8000/todo/${todoId}`, {
-        title: newText,
-      });
-      return { todoId, newText };
+      const response = await axios.patch(
+        `http://localhost:8000/todo/${id + 1}`,
+        {
+          title: newText,
+          done: isDone ? 1 : 0,
+        }
+      );
+
+      console.log("resposne : ", response);
+
+      if (response.data.result) {
+        console.log("newText, completed : ", newText, completed);
+        dispatch(
+          todosSlice.actions.editTodoState({
+            id,
+            text: newText,
+            completed,
+          })
+        );
+      }
     } catch (error) {
       console.error("Error editing todo:", error);
       throw error;
@@ -98,6 +119,19 @@ export const todosSlice = createSlice({
     // 서버에서 추가된 할 일을 state에 추가하는 액션
     addTodo: (state, action) => {
       state.todos.push(action.payload);
+    },
+    editTodoState: (state, action) => {
+      const { id, text, completed } = action.payload;
+      state.todos = state.todos.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            text,
+            completed,
+          };
+        }
+        return todo;
+      });
     },
   },
   extraReducers: (builder) => {
