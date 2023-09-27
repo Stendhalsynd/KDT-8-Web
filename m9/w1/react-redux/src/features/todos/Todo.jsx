@@ -48,6 +48,8 @@ export function Todo() {
   const todoList = useSelector(todos).todos;
   const currentStatus = useSelector(filterStatus);
   const [textInput, setTextInput] = useState("");
+  const [todoInput, setTodoInput] = useState("");
+  const [editingTodoId, setEditingTodoId] = useState(null);
 
   useEffect(() => {
     dispatch(fetchTodos());
@@ -63,8 +65,6 @@ export function Todo() {
         return todoList;
     }
   };
-
-  console.log(resultTodos());
 
   return (
     <>
@@ -105,21 +105,34 @@ export function Todo() {
             <label htmlFor={todo.id} style={{ padding: "5px" }}>
               <InputStyle
                 type="text"
-                value={todo.text}
-                onChange={(e) => {
-                  console.log("실행");
+                value={editingTodoId === todo.id ? todoInput : todo.text}
+                onClick={() => {
+                  setEditingTodoId(todo.id);
+                  setTodoInput(todo.text);
+                }}
+                onChange={(e) => setTodoInput(e.target.value)}
+                onBlur={() => {
                   dispatch(
                     editTodo({
                       id: todo.id,
-                      newText: e.target.value,
+                      newText: todoInput,
                       completed: todo.completed,
                     })
                   );
                   dispatch(fetchTodos());
+                  setEditingTodoId(null);
+                  setTodoInput("");
                 }}
               />
             </label>
-            <button onClick={() => dispatch(todoDeleted(todo.id))}>x</button>
+            <button
+              onClick={() => {
+                dispatch(todoDeleted(todo.id));
+                dispatch(fetchTodos());
+              }}
+            >
+              x
+            </button>
           </li>
         ))}
       </ul>

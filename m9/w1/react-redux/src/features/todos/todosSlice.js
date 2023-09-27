@@ -27,19 +27,16 @@ export const todoAdded = createAsyncThunk(
   "todos/todoAdded",
   async (payload, { dispatch }) => {
     try {
-      // 서버에 추가할 데이터를 준비합니다.
       const requestData = {
         title: payload,
-        done: 0, // 이 부분은 기본값으로 설정하거나 payload에서 받아오도록 변경해야 할 수 있습니다.
+        done: 0,
       };
 
-      // 서버에 POST 요청을 보냅니다.
       const response = await axios.post(
         "http://localhost:8000/todo",
         requestData
       );
 
-      // 성공한 경우, 서버에서 받은 데이터를 리듀서로 추가합니다.
       if (response.result)
         dispatch(
           todosSlice.actions.addTodo({
@@ -47,9 +44,6 @@ export const todoAdded = createAsyncThunk(
             completed: false,
           })
         );
-
-      // 여기서 response.data는 서버에서 추가된 할 일의 정보를 포함합니다.
-      // 서버에서 할 일의 ID 등을 생성하는 방식에 따라서 이 부분을 조정할 수 있습니다.
     } catch (error) {
       console.error("Error adding todo:", error);
     }
@@ -73,10 +67,7 @@ export const editTodo = createAsyncThunk(
         }
       );
 
-      console.log("resposne : ", response);
-
       if (response.data.result) {
-        console.log("newText, completed : ", newText, completed);
         dispatch(
           todosSlice.actions.editTodoState({
             id,
@@ -92,6 +83,31 @@ export const editTodo = createAsyncThunk(
   }
 );
 
+export const deleteTodo = createAsyncThunk("todos/deleteTodo", async (id) => {
+  try {
+    await axios.delete(`http://localhost:8000/todo/${id + 1}`);
+    return id + 1;
+  } catch (error) {
+    console.error("Error deleting todo:", error);
+    throw error;
+  }
+});
+
+export const todoDeleted = createAsyncThunk(
+  "todos/todoDeleted",
+  async (id, { dispatch }) => {
+    try {
+      await dispatch(deleteTodo(id));
+    } catch (error) {
+      console.error("Error deleting todo:", error);
+    }
+  }
+);
+
+const removeTodoById = (state, id) => {
+  state.todos = state.todos.filter((todo) => todo.id !== id);
+};
+
 export const todosSlice = createSlice({
   name: "todos",
   initialState,
@@ -105,7 +121,8 @@ export const todosSlice = createSlice({
       }
     },
     todoDeleted: (state, action) => {
-      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+      // state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+      removeTodoById(state, action.payload);
     },
     allCompleted: (state) => {
       state.todos = state.todos.map((todo) => ({
@@ -116,7 +133,6 @@ export const todosSlice = createSlice({
     completedCleared: (state) => {
       state.todos = state.todos.filter((todo) => !todo.completed);
     },
-    // 서버에서 추가된 할 일을 state에 추가하는 액션
     addTodo: (state, action) => {
       state.todos.push(action.payload);
     },
@@ -137,11 +153,9 @@ export const todosSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchTodos.fulfilled, (state, action) => {
-        // 비동기 액션 호출이 성공한 경우, 데이터를 상태에 업데이트합니다.
         state.todos = action.payload;
       })
       .addCase(fetchTodos.rejected, (state, action) => {
-        // 비동기 액션 호출이 실패한 경우, 에러를 처리할 수 있습니다.
         console.error("Error fetching todos:", action.error);
       });
   },
@@ -155,7 +169,7 @@ export const todos = (state) => state.todos;
 export const completedTodos = (state) =>
   state.todos.filter((todo) => todo.completed === true);
 
-export const { todoToggled, todoDeleted, allCompleted, completedCleared } =
+export const { todoToggled, allCompleted, completedCleared } =
   todosSlice.actions;
 
 export default todosSlice.reducer;
