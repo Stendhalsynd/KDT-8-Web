@@ -6,6 +6,7 @@ import {
   todoDeleted,
   allCompleted,
   completedCleared,
+  todoEdited,
   todos,
 } from "./todosSlice";
 import {
@@ -87,7 +88,13 @@ export function Todo() {
               id={todo.id}
             />
             <label htmlFor={todo.id} style={{ padding: "5px" }}>
-              {todo.text}
+              <input
+                type="text"
+                value={todo.text}
+                onChange={(e) =>
+                  dispatch(todoEdited({ id: todo.id, newText: e.target.value }))
+                }
+              />
             </label>
             <button onClick={() => dispatch(todoDeleted(todo.id))}>x</button>
           </li>

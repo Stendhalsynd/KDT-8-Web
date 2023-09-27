@@ -44,6 +44,14 @@ export const todosSlice = createSlice({
     completedCleared: (state) => {
       state.todos = state.todos.filter((todo) => !todo.completed);
     },
+    todoEdited: (state, action) => {
+      const { id, newText } = action.payload;
+      const todoToEdit = state.todos.find((todo) => todo.id === id);
+
+      if (todoToEdit) {
+        todoToEdit.text = newText;
+      }
+    },
   },
 });
 
@@ -61,6 +69,7 @@ export const {
   todoDeleted,
   allCompleted,
   completedCleared,
+  todoEdited,
 } = todosSlice.actions;
 
 export default todosSlice.reducer;
