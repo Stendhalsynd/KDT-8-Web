@@ -105,6 +105,14 @@ https://github.com/Stendhalsynd/react-study
 | dawncoding | Stendhalsynd | best0611 | syxxne |
 | 메인 페이지 <br> 로그인, 회원가입, 로그아웃 기능 구현 <br> 스크롤 인터렉션 <br> 서버 배포 | 피그마 디자인 <br> 웹 로그인, 회원가입 애니메이션 <br> 스터디 개설 - slackbot <br> 스터디 상세페이지 | 스터디 리스트 페이지 <br> 스터디 개설 페이지 <br> 마이페이지 | 면접 연습 페이지 - OpenAI API <br> 모바일 로그인, 회원가입 css <br> 버튼 클릭 애니메이션 |
 
+### 스터디 - 쏙쏙 들어오는 함수형 코딩 북스터디
+
+책을 읽으며 우아한 스터디를 비롯한 여러 북스터디의 방식을 활용해 책을 읽고 인상적이었던 부분, 그에 대한 생각 및 코드 적용해봤을때 느낀 점 등을 기록하는 스터디
+
+> 2023.08.30 ~
+
+https://github.com/Stendhalsynd/book-study-functional-coding
+
 ## ✏️ 블로깅 기록
 
 | 순번 | 포스트   | 태그    | 종류 |
@@ -158,15 +166,6 @@ https://github.com/Stendhalsynd/react-study
 | 47 | [state, action, reducer 생성하기](https://velog.io/@qmflf556/React-%EC%8A%A4%ED%84%B0%EB%94%94-6%EC%A3%BC%EC%B0%A8-redux-todo-%EC%95%B1) | `redux` | ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen) |
 | 48 | [redux 로 todo 앱 만들기](https://velog.io/@qmflf556/redux-todo) | `redux` | ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen) |
 | 49 | [redux 로 modal 만들기](https://velog.io/@qmflf556/Redux-Modal-%EB%A7%8C%EB%93%A4%EA%B8%B0) | `redux` | ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen) |
-| 50 | [쏙쏙 들어오는 함수형 코딩 CH1](https://velog.io/@qmflf556/%EC%8F%99%EC%8F%99-%EB%93%A4%EC%96%B4%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%BD%94%EB%94%A9-CH1) | `functional programing` | ![](https://img.shields.io/static/v1?label=&message=book&color=salmon) |
-| 51 | [쏙쏙 들어오는 함수형 코딩 CH2](https://velog.io/@qmflf556/%EC%8F%99%EC%8F%99-%EB%93%A4%EC%96%B4%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%BD%94%EB%94%A9-CH1) | `functional programing`, `HOF` | ![](https://img.shields.io/static/v1?label=&message=book&color=salmon) |
-| 52 | [쏙쏙 들어오는 함수형 코딩 CH3](https://velog.io/@qmflf556/%EC%8F%99%EC%8F%99-%EB%93%A4%EC%96%B4%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%BD%94%EB%94%A9-CH1) | `functional programing`, `액션/계산/데이터` | ![](https://img.shields.io/static/v1?label=&message=book&color=salmon) |
-| 53 | [13주차 회고1 React Router 입문](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-12%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A01-react-router-dom) | `react router` | ![](https://img.shields.io/static/v1?label=&message=basic&color=skyblue) |
-| 54 | [13주차 회고2 React Hook Form with async redux](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-13%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A02) | `react hook form`, `redux createAsyncThunk` | ![](https://img.shields.io/static/v1?label=&message=basic&color=skyblue) |
-| 55 | [recoil 로 todo 앱 만들기](https://velog.io/@qmflf556/Recoil-todo-app) | `recoil` | ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen) |
-| 56 | [쏙쏙 들어오는 함수형 코딩 CH4](https://velog.io/@qmflf556/%EC%8F%99%EC%8F%99-%EB%93%A4%EC%96%B4%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%BD%94%EB%94%A9-CH4) | `functional programing`, `액션에서 계산 뽑기` | ![](https://img.shields.io/static/v1?label=&message=book&color=salmon) |
-| 57 | [쏙쏙 들어오는 함수형 코딩 CH5](https://velog.io/@qmflf556/%EC%8F%99%EC%8F%99-%EB%93%A4%EC%96%B4%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%BD%94%EB%94%A9-CH5) | `functional programing`, `더 좋은 액션 만들기` | ![](https://img.shields.io/static/v1?label=&message=book&color=salmon) |
-| 58 | [쏙쏙 들어오는 함수형 코딩 CH6](https://velog.io/@qmflf556/%EC%8F%99%EC%8F%99-%EB%93%A4%EC%96%B4%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%BD%94%EB%94%A9-CH6) | `functional programing`, `카피 온 라이트`, `불변 데이터 구조` | ![](https://img.shields.io/static/v1?label=&message=book&color=salmon) |
-| 59 | [쏙쏙 들어오는 함수형 코딩 CH7](https://velog.io/@qmflf556/%EC%8F%99%EC%8F%99-%EB%93%A4%EC%96%B4%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%BD%94%EB%94%A9-CH7) | `functional programing`, `방어적 복사` | ![](https://img.shields.io/static/v1?label=&message=book&color=salmon) |
-| 60 | [쏙쏙 들어오는 함수형 코딩 CH8](https://velog.io/@qmflf556/%EC%8F%99%EC%8F%99-%EB%93%A4%EC%96%B4%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%BD%94%EB%94%A9-CH8) | `functional programing`, `직접 구현` | ![](https://img.shields.io/static/v1?label=&message=book&color=salmon) |
-| 61 | [쏙쏙 들어오는 함수형 코딩 CH9](https://velog.io/@qmflf556/%EC%8F%99%EC%8F%99-%EB%93%A4%EC%96%B4%EC%98%A4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%EC%BD%94%EB%94%A9-CH9) | `functional programing`, `추상화 벽`, `작은 인터페이스`, `편리한 계층` | ![](https://img.shields.io/static/v1?label=&message=book&color=salmon) |
+| 50 | [13주차 회고1 React Router 입문](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-12%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A01-react-router-dom) | `react router` | ![](https://img.shields.io/static/v1?label=&message=basic&color=skyblue) |
+| 51 | [13주차 회고2 React Hook Form with async redux](https://velog.io/@qmflf556/%ED%8F%AC%EC%8A%A4%EC%BD%94x%EC%BD%94%EB%94%A9%EC%98%A8-KDT-Web-8-13%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A02) | `react hook form`, `redux createAsyncThunk` | ![](https://img.shields.io/static/v1?label=&message=basic&color=skyblue) |
+| 52 | [recoil 로 todo 앱 만들기](https://velog.io/@qmflf556/Recoil-todo-app) | `recoil` | ![](https://img.shields.io/static/v1?label=&message=study&color=palegreen) |
