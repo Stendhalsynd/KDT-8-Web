@@ -3,15 +3,20 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 
 import App from "./App";
+import Counter from "./Counter";
+import Login from "./Login";
 
-import store from "./store";
+// import store from "./store";
+import { store } from "./store/index-toolkit";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <StrictMode>
     <Provider store={store}>
-      <App />
+      {/* <App /> */}
+      <Counter />
+      <Login />
     </Provider>
   </StrictMode>
 );
