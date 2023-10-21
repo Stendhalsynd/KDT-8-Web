@@ -117,6 +117,18 @@ https://github.com/Stendhalsynd/react-study
 
 https://github.com/Stendhalsynd/book-study-functional-coding
 
+## 🐤 프론트엔드
+
+> 2023.09.15 ~ 10.10
+
+### 학습내용
+
+- React.js
+- React-Router-dom
+- React-Hook-Form
+- Redux, Redux-Toolkit
+- Typescript
+
 ## 🤗 Personal Project - 나만의 포트폴리오
 
 > 2023.10.11 ~ 2023.10.19
