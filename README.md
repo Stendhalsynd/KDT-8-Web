@@ -117,7 +117,7 @@ https://github.com/Stendhalsynd/react-study
 
 https://github.com/Stendhalsynd/book-study-functional-coding
 
-## 🐤 프론트엔드
+## 🐤프론트엔드
 
 > 2023.09.15 ~ 10.10
 
